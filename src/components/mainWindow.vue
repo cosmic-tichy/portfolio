@@ -3,42 +3,16 @@
     <b-container>
       <b-row id="buttonNav">
       <b-col>
-    <div class="container">
-      <div class="hovereffect">
-        <img class="img-responsive" src="../assets/aboutNick.jpg" alt="" >
-        <div class="overlay">
-          <h2>About</h2>
-          <p>
-            <a href="#">LINK HERE</a>
-          </p>
-        </div>
-      </div>
-    </div>
-      </b-col>
-      <b-col>
-      <div class="container">
-        <div class="hovereffect">
-          <img class="img-responsive" src="../assets/cellCrop2.png" alt="" >
-          <div class="overlay">
-            <h2>Work</h2>
-            <p>
-              <a href="#">View my work</a>
-            </p>
-          </div>
-        </div>
-      </div>
-      </b-col>
-      <b-col>
-      <div class="container">
-        <div class="hovereffect">
-          <img class="img-responsive" src="../assets/newCv.png" alt="" >
-          <div class="overlay">
-            <h2>Effect 12</h2>
-            <p>
-              <a href="#">LINK HERE</a>
-            </p>
-          </div>
-        </div>
+      <div id="mainblurb">
+        <h1>Full-stack developer <br/> helping scientists do more science</h1>
+        <nav>
+          <ul>
+            <li @mouseover="workColor(true)" @mouseleave="workColor(false)">
+              <router-link to="/work" v-bind:style="{color: activeColor, cursor: pointer, textDecoration: underline}">View My Work</router-link>
+              <span></span><span></span><span></span><span></span>
+            </li>
+          </ul>
+        </nav>
       </div>
       </b-col>
     </b-row>
@@ -56,109 +30,107 @@ export default {
   name: "mainWindow",
   data(){
     return {
-
+      activeColor: '#EF8354',
+      pointer: 'pointer',
+      underline: 'none',
     }
   },
   mounted() {
 
   },
+  methods: {
+    workColor(active){
+      active ? this.activeColor = '#2D3142' : this.activeColor ='#EF8354'
+
+    },
+  }
 }
 </script>
 
 <style scoped>
-#buttonNav {
-  margin-top: 50%;
-}
-.hovereffect {
-  width: 100%;
-  height: 100%;
-  float: left;
-  overflow: hidden;
-  position: relative;
-  text-align: center;
-  cursor: default;
-  background: #91C0C4;
-  border-radius:10px;
+h1 {
+  color: #EF8354;
+  margin-top: 100%;
+  font-family: Ubuntu;
 }
 
-.hovereffect .overlay {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  overflow: hidden;
-  top: 0;
-  left: 0;
-  padding: 50px 20px;
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
 }
 
-.hovereffect img {
-  display: block;
-  position: relative;
-  max-width: none;
-  width: calc(100% + 20px);
-  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-  transition: opacity 0.35s, transform 0.35s;
-  -webkit-transform: translate3d(-10px,0,0);
-  transform: translate3d(-10px,0,0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-.hovereffect:hover img {
-  opacity: 0.4;
-  filter: alpha(opacity=40);
-  -webkit-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.hovereffect h2 {
+nav ul li {
+  --c: #EF8354;
+  color: var(--c);
+  font-size: 16px;
+  border: 0.3em solid var(--c);
+  border-radius: 0.5em;
+  width: 12em;
+  height: 3em;
   text-transform: uppercase;
-  color: #fff;
+  font-weight: bold;
+  font-family: sans-serif;
+  letter-spacing: 0.1em;
   text-align: center;
+  line-height: 3em;
   position: relative;
-  font-size: 17px;
   overflow: hidden;
-  padding: 0.5em 0;
-  background-color: transparent;
+  z-index: 1;
+  transition: 0.5s;
+  margin: 1em;
 }
 
-.hovereffect h2:after {
+nav ul li span {
   position: absolute;
-  bottom: 0;
-  left: 0;
   width: 100%;
-  height: 2px;
-  background: #fff;
-  content: '';
-  -webkit-transition: -webkit-transform 0.35s;
-  transition: transform 0.35s;
-  -webkit-transform: translate3d(-100%,0,0);
-  transform: translate3d(-100%,0,0);
+  height: 100%;
+  background-color: var(--c);
+  transform: translateY(150%);
+  border-radius: 50%;
+  left: calc((var(--n) - 1) * 25%);
+  transition: 0.5s;
+  transition-delay: calc((var(--n) - 1) * 0.1s);
+  z-index: -1;
 }
 
-.hovereffect:hover h2:after {
-  -webkit-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
+nav ul li:hover {
+  color: #2D3142;
 }
 
-.hovereffect a, .hovereffect p {
-  color: #FFF;
-  opacity: 0;
-  filter: alpha(opacity=0);
-  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-  transition: opacity 0.35s, transform 0.35s;
-  -webkit-transform: translate3d(100%,0,0);
-  transform: translate3d(100%,0,0);
+nav ul li:hover span {
+  transform: translateY(0) scale(2);
 }
 
-.hovereffect:hover a, .hovereffect:hover p {
-  opacity: 1;
-  filter: alpha(opacity=100);
-  -webkit-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
+nav ul li span:nth-child(1) {
+  --n: 1;
 }
-</style>
 
-<style lang="scss" scoped>
+nav ul li span:nth-child(2) {
+  --n: 2;
+}
 
+nav ul li span:nth-child(3) {
+  --n: 3;
+}
+
+nav ul li span:nth-child(4) {
+  --n: 4;
+}
+
+#workLink {
+  cursor: pointer;
+}
+a {
+  color: #EF8354;
+}
 </style>
