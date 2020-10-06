@@ -38,7 +38,7 @@ export default {
 <style>
   html,body{
     margin: 0;
-    overflow: hidden;
+    overflow: auto;
     background-color: #2D3142;
   }
   #app {

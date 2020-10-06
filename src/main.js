@@ -17,6 +17,7 @@ import mainWindow from './components/mainWindow.vue';
 import work from './components/work.vue';
 import contact from "@/components/contact";
 import about from "@/components/about";
+import map from "@/components/map";
 
 
 const router = new VueRouter({
@@ -24,7 +25,8 @@ const router = new VueRouter({
     { path: '/', component: mainWindow },
     { path: '/work', component: work },
     {path: '/contact', component: contact},
-    {path: '/about', component: about }
+    {path: '/about', component: about },
+    {path: '/maps-for-democracy', component: map}
   ]
 });
 

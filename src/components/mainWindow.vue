@@ -5,10 +5,11 @@
       <b-col>
       <div id="mainblurb">
         <h1>Full-stack developer <br/> helping scientists do more science</h1>
+
         <nav>
           <ul>
-            <li @mouseover="workColor(true)" @mouseleave="workColor(false)">
-              <router-link to="/work" v-bind:style="{color: activeColor, cursor: pointer, textDecoration: underline}">View My Work</router-link>
+            <li class="orangeButton" @mouseover="workColor(true)" @mouseleave="workColor(false)" @click="viewWork" >
+             View My Work
               <span></span><span></span><span></span><span></span>
             </li>
           </ul>
@@ -41,7 +42,9 @@ export default {
   methods: {
     workColor(active){
       active ? this.activeColor = '#2D3142' : this.activeColor ='#EF8354'
-
+    },
+    viewWork(){
+      this.$router.push('/work')
     },
   }
 }
