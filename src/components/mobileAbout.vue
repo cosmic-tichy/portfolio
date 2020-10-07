@@ -4,7 +4,7 @@
     <div class="accordion" role="tablist">
       <b-card no-body class="aboutCard">
         <b-card-header header-tag="header" class="p-1" role="tab">
-          <b-button block v-b-toggle.accordion-1 variant="info">Background</b-button>
+          <b-button block v-b-toggle.accordion-1 variant="outline-dark">Background</b-button>
         </b-card-header>
         <b-collapse id="accordion-1" visible accordion="my-accordion" role="tabpanel">
           <b-card-body>
@@ -39,7 +39,7 @@
               no-body
       >
         <b-card-header header-tag="header" class="p-1" role="tab">
-          <b-button block v-b-toggle.accordion-2 variant="info">Skills</b-button>
+          <b-button block v-b-toggle.accordion-2 variant="outline-dark">Skills</b-button>
         </b-card-header>
         <b-collapse id="accordion-2" accordion="my-accordion" role="tabpanel">
           <b-card-body>
@@ -106,7 +106,7 @@
 
       <b-card no-body class="aboutCard">
         <b-card-header header-tag="header" class="p-1" role="tab">
-          <b-button block v-b-toggle.accordion-3 variant="info">Experience</b-button>
+          <b-button block v-b-toggle.accordion-3 variant="outline-dark">Experience</b-button>
         </b-card-header>
         <b-collapse id="accordion-3" accordion="my-accordion" role="tabpanel">
           <b-card-body>
