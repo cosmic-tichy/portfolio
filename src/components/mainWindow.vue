@@ -53,7 +53,7 @@ export default {
 <style scoped>
 h1 {
   color: #EF8354;
-  margin-top: 100%;
+  margin-top: 50%;
   font-family: Ubuntu;
 }
 

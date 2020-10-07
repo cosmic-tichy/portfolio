@@ -2,8 +2,6 @@
   <div id="mainWindow">
     <h1>Recent Work</h1>
     <br />
-    <br />
-    <br />
 
 
 <!--    <b-modal size="xl" id="modal-2" ref="modal2" hide-footer hide-header>-->
