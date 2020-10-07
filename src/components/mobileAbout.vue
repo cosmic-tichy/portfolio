@@ -214,12 +214,7 @@ export default {
 
 body { background: #FCF; }
 
-.buttonColumn {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
+
 .divider {								/* minor cosmetics */
   display: table;
   font-size: 24px;
@@ -402,5 +397,14 @@ nav ul li span:nth-child(4) {
 }
 a {
   color: #EF8354;
+}
+</style>
+
+<style>
+.buttonColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 </style>

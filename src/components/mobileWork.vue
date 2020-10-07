@@ -181,7 +181,7 @@ c52 -41 18 -99 -59 -99 -32 0 -51 6 -65 20 -26 26 -25 46 5 75 30 31 82 33
     <br />
     <br />
     <br />
-    <div class="visitButton">
+    <div class="buttonColumn">
       <nav>
         <ul>
           <li class="orangeButton" @mouseover="workColor(true)" @mouseleave="workColor(false)" @click="currentProj">
