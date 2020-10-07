@@ -1,9 +1,5 @@
 <template>
-  <div id="mainWindow">
-    <h1>Recent Work</h1>
-
-
-
+  <div>
     <b-modal id="modal-multi-1" size="xl" ok-only no-stacking hide-header hide-footer>
       <div class="d-block text-center">
         <h3>GeoGateway</h3>
@@ -130,13 +126,13 @@
       </div>
     </b-modal>
 
-    <div v-if="!isMobile()">
-      <br />
-      <div class="container">
-        <div class="threeholder" >
-          <div class="threeone"
+    <div class="container">
+      <b-col>
+        <hr />
+        <b-row class="entryRow"
                v-b-modal.modal-multi-1
                v-b-tooltip.hover title="Click for more information">
+          <div class="threeone">
             <div class="circlepic">
 
             </div>
@@ -187,6 +183,8 @@ c52 -41 18 -99 -59 -99 -32 0 -51 6 -65 20 -26 26 -25 46 5 75 30 31 82 33
                   </g>
                 </svg>
               </div>
+            </div>
+            <div class="entryText">
               <h4>GeoGateway: Mapping Tools for Geophysicists </h4>
               <p><b>Developed For:</b>
                 <br />
@@ -199,9 +197,12 @@ c52 -41 18 -99 -59 -99 -32 0 -51 6 -65 20 -26 26 -25 46 5 75 30 31 82 33
               </p>
             </div>
           </div>
-          <div class="threetwo"
+        </b-row>
+        <hr />
+        <b-row class="entryRow"
                v-b-modal.modal-multi-2
                v-b-tooltip.hover title="Click for more information">
+          <div class="threetwo">
             <div class="circlepic">
 
             </div>
@@ -214,22 +215,23 @@ c52 -41 18 -99 -59 -99 -32 0 -51 6 -65 20 -26 26 -25 46 5 75 30 31 82 33
                   <g transform="translate(0.000000,42.000000) scale(0.100000,-0.100000)"
                      fill="#000000" stroke="none">
                     <path d="M7 413 c-4 -3 -7 -98 -7 -210 l0 -203 41 0 41 0 -5 47 c-3 27 -13 75
--23 109 -17 58 -17 62 0 110 10 27 21 73 23 102 l5 52 -34 0 c-19 0 -38 -3
--41 -7z"/>
+                     -23 109 -17 58 -17 62 0 110 10 27 21 73 23 102 l5 52 -34 0 c-19 0 -38 -3
+                     -41 -7z"/>
                     <path d="M185 403 c-154 -80 -170 -276 -31 -371 43 -28 56 -32 116 -32 65 0
-130 15 130 29 0 4 -5 12 -10 17 -7 7 2 21 25 44 43 41 46 82 10 123 -22 24
--31 27 -90 27 -61 0 -66 -2 -75 -26 -16 -41 -13 -44 50 -44 l60 0 0 -36 c0
--31 -4 -37 -37 -51 -100 -41 -204 35 -190 140 15 107 131 159 218 96 l28 -20
-7 28 c4 15 11 34 17 40 7 10 -2 18 -34 33 -54 24 -151 26 -194 3z"/>
+                    130 15 130 29 0 4 -5 12 -10 17 -7 7 2 21 25 44 43 41 46 82 10 123 -22 24
+                     -31 27 -90 27 -61 0 -66 -2 -75 -26 -16 -41 -13 -44 50 -44 l60 0 0 -36 c0
+                     -31 -4 -37 -37 -51 -100 -41 -204 35 -190 140 15 107 131 159 218 96 l28 -20
+                    7 28 c4 15 11 34 17 40 7 10 -2 18 -34 33 -54 24 -151 26 -194 3z"/>
                     <path d="M472 403 c-40 -20 -62 -59 -62 -112 0 -51 34 -93 91 -111 48 -16 89
--46 89 -64 0 -43 -79 -60 -115 -26 l-21 20 -28 -29 -27 -28 31 -27 c27 -22 41
--26 99 -26 74 0 102 13 126 60 20 39 19 89 -4 126 -14 23 -36 38 -82 55 -68
-27 -90 49 -73 76 18 29 49 33 87 13 l36 -19 20 26 c12 14 21 29 21 33 0 3 -17
-16 -39 28 -46 26 -103 28 -149 5z"/>
+                     -46 89 -64 0 -43 -79 -60 -115 -26 l-21 20 -28 -29 -27 -28 31 -27 c27 -22 41
+                     -26 99 -26 74 0 102 13 126 60 20 39 19 89 -4 126 -14 23 -36 38 -82 55 -68
+                    27 -90 49 -73 76 18 29 49 33 87 13 l36 -19 20 26 c12 14 21 29 21 33 0 3 -17
+                    16 -39 28 -46 26 -103 28 -149 5z"/>
                   </g>
                 </svg>
               </div>
-
+            </div>
+            <div class="entryText">
               <h4>Resurrecting Megajeff: Digital Exhibit</h4>
               <p><b>Developed For:</b>
                 <br />
@@ -240,13 +242,14 @@ c52 -41 18 -99 -59 -99 -32 0 -51 6 -65 20 -26 26 -25 46 5 75 30 31 82 33
                 <br />A digital exhibit to explore the importance of natural history collections in celebration of Indiana University’s 200th anniversary.
                 <br />
               </p>
-
             </div>
-
           </div>
-          <div class="threethree"
+        </b-row>
+        <hr />
+        <b-row class="entryRow"
                v-b-modal.modal-multi-3
                v-b-tooltip.hover title="Click for more information">
+          <div class="threethree">
             <div class="circlepic">
 
             </div>
@@ -259,23 +262,25 @@ c52 -41 18 -99 -59 -99 -32 0 -51 6 -65 20 -26 26 -25 46 5 75 30 31 82 33
                   <g transform="translate(0.000000,57.000000) scale(0.100000,-0.100000)"
                      fill="#000000" stroke="none">
                     <path d="M202 453 l-2 -82 -82 -4 -83 -3 83 -2 82 -2 0 -75 0 -74 -82 -4 -83
--3 82 -2 82 -2 4 -82 3 -83 2 83 2 82 75 0 74 0 4 -82 3 -83 2 82 2 82 83 4
-82 3 -82 2 -83 2 0 75 0 74 83 4 82 3 -82 2 -82 2 -4 83 -3 82 -2 -82 -2 -83
--75 0 -74 0 -4 83 -3 82 -2 -82z m158 -168 l0 -75 -75 0 -75 0 0 75 0 75 75 0
-75 0 0 -75z"/>
+                   -3 82 -2 82 -2 4 -82 3 -83 2 83 2 82 75 0 74 0 4 -82 3 -83 2 82 2 82 83 4
+                  82 3 -82 2 -83 2 0 75 0 74 83 4 82 3 -82 2 -82 2 -4 83 -3 82 -2 -82 -2 -83
+                   -75 0 -74 0 -4 83 -3 82 -2 -82z m158 -168 l0 -75 -75 0 -75 0 0 75 0 75 75 0
+                  75 0 0 -75z"/>
                     <path d="M242 488 c-18 -18 -14 -63 6 -81 38 -34 92 -8 92 44 0 33 -18 49 -55
-49 -17 0 -36 -5 -43 -12z"/>
+                  49 -17 0 -36 -5 -43 -12z"/>
                     <path d="M407 322 c-22 -24 -21 -55 1 -75 22 -20 63 -22 80 -5 16 16 16 70 0
-86 -18 18 -63 14 -81 -6z"/>
+                  86 -18 18 -63 14 -81 -6z"/>
                     <path d="M86 164 c-19 -18 -21 -65 -4 -82 17 -17 64 -15 82 4 22 21 20 50 -4
-74 -24 24 -53 26 -74 4z"/>
+                  74 -24 24 -53 26 -74 4z"/>
                     <path d="M247 162 c-20 -22 -22 -63 -5 -80 16 -16 70 -16 86 0 18 18 14 63 -6
-81 -24 22 -55 21 -75 -1z"/>
+                  81 -24 22 -55 21 -75 -1z"/>
                     <path d="M410 160 c-38 -38 -15 -90 39 -90 34 0 51 17 51 51 0 54 -52 77 -90
-39z"/>
+                  39z"/>
                   </g>
                 </svg>
               </div>
+            </div>
+            <div class="entryText">
               <h4 style="margin-top: 30px ">Interactive Automata: Generative Art and Cellular Automata</h4>
               <p><b>Developed For:</b>
                 <br />
@@ -288,47 +293,46 @@ c52 -41 18 -99 -59 -99 -32 0 -51 6 -65 20 -26 26 -25 46 5 75 30 31 82 33
                 <br/>
               </p>
             </div>
-
           </div>
+        </b-row>
+        <b-row>
+        </b-row>
+        <b-row>
+        </b-row>
+      </b-col>
 
-        </div>
 
-      </div>
-      <br />
-      <br />
-      <br />
-      <div class="visitButton">
-        <nav>
-          <ul>
-            <li class="orangeButton" @mouseover="workColor(true)" @mouseleave="workColor(false)" @click="currentProj">
-              Active Project
-              <span></span><span></span><span></span><span></span>
-            </li>
-          </ul>
-        </nav>
-        <nav>
-          <ul>
-            <li class="orangeButton" @mouseover="workColor(true)" @mouseleave="workColor(false)" @click="about">
-              About Me
-              <span></span><span></span><span></span><span></span>
-            </li>
-          </ul>
-        </nav>
-      </div>
     </div>
-    <div class="mobileWindow" v-else>
-      <mobileWork/>
+    <br />
+    <br />
+    <br />
+    <div class="visitButton">
+      <nav>
+        <ul>
+          <li class="orangeButton" @mouseover="workColor(true)" @mouseleave="workColor(false)" @click="currentProj">
+            Active Project
+            <span></span><span></span><span></span><span></span>
+          </li>
+        </ul>
+      </nav>
+      <nav>
+        <ul>
+          <li class="orangeButton" @mouseover="workColor(true)" @mouseleave="workColor(false)" @click="about">
+            About Me
+            <span></span><span></span><span></span><span></span>
+          </li>
+        </ul>
+      </nav>
     </div>
+
   </div>
-
 
 </template>
 
 <script>
 // import * as d3 from 'd3'
-import mobileWork from "@/components/mobileWork";
 export default {
-  name: "work",
+  name: "mobileWork",
   data() {
     return {
       threeone: false,
@@ -339,9 +343,6 @@ export default {
       pointer: 'pointer',
       underline: 'none',
     }
-  },
-  components: {
-    mobileWork
   },
   computed: {
     mj1() {
@@ -437,46 +438,56 @@ body {
   margin:0;
 }
 
-.svgContainer2 {
-  margin-top: 5px;
-  margin-left: 5px;
+.svgContainer2{
+  margin-bottom: 0;
+}
+.entryRow {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  height: 425px;
+  width: 70%;
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
 }
 
-
-.threeholder {
-  position: relative;
-  margin-top: 0px;
-  width: 800px;
-  height:500px;
-  margin-left: auto;
-  margin-right: auto;
-}
 .threeone {
   cursor: pointer;
-  display: inline-block;
-  width: 33.33333333333%;
+  width: 90%;
   height: 100%;
   background: #2D3142;
-  border-bottom: 15px solid #2D3142;
   text-align: center;
   transition: all 0.25s;
 }
 .threetwo {
   cursor: pointer;
-  display: inline-block;
-  width: 33.333333333%;
+  width: 90%;
   height: 100%;
   background: #2D3142;
-  border-bottom: 15px solid #2D3142;
+  text-align: center;
   transition: all 0.25s;
+}
+
+.entryText {
+  margin-top:100px;
+  width: 100%;
+}
+.entryText p {
+  color: #ffffff;
+  font-family: Ubuntu;
+  font-weight: lighter;
+}
+.entryText h4 {
+  color: #EF8354;
 }
 .threethree {
   cursor: pointer;
-  display: inline-block;
-  width: 33.333333333%;
+  width: 90%;
   height: 100%;
   background: #2D3142;
-  border-bottom: 15px solid #2D3142;
+  text-align: center;
   transition: all 0.25s;
 }
 .threeone:hover {
@@ -491,26 +502,25 @@ body {
 .threeone:hover svg{
   fill:#EF8354;
 }
-.threeholder h4 {
-  width: 200px;
-  text-align: center;
-  font-size: 13px;
-  margin-left: -55px;
-  font-weight: bold;
-  margin-top: 45px;
-  text-align: center;
-  color: white;
-}
-.threeholder p {
-  display: inline-block;
-  width:200px;
-  text-align: center;
-  margin-left: -55px;
-  margin-top: 20px;
-  font-size: 12px;
-  color:#8a8a8a;
-  letter-spacing: 1px;
-}
+/*.threeholder h4 {*/
+/*  width: 200px;*/
+/*  text-align: center;*/
+/*  font-size: 13px;*/
+/*  margin-left: -55px;*/
+/*  font-weight: bold;*/
+/*  margin-top: 45px;*/
+/*  text-align: center;*/
+/*  color: white;*/
+/*}*/
+/*.threeholder p {*/
+/*  width:200px;*/
+/*  text-align: center;*/
+/*  margin-left: -55px;*/
+/*  margin-top: 20px;*/
+/*  font-size: 12px;*/
+/*  color:#8a8a8a;*/
+/*  letter-spacing: 1px;*/
+/*}*/
 .threeone:hover h4, p {
   color: black;
 }
@@ -529,6 +539,7 @@ body {
 .threethree:hover p {
   color: black;
 }
+
 
 .threeone:hover h5 {
   color: #4F5D75;
@@ -563,22 +574,24 @@ i {
 }
 .circleborder {
   position: absolute;
-  top: 30px;
   width: 90px;
   height: 90px;
   background: #EF8354;
-  margin-left: 88.33333px;
+  left: 0;
+  right: 0;
+  margin: auto;
   border-radius: 50%;
 }
 .circlepic {
-  position:absolute;
-  top:-10px;
-  margin-top: 30px;
-  width: 110px;
-  height: 110px;
-  background: #4F5D75;
-  margin-left: 78.33333px;
-  border-radius: 50%;
+  /*position:absolute;*/
+  /*bottom: 92.5%;*/
+  /*width: 110px;*/
+  /*height: 110px;*/
+  /*background: #4F5D75;*/
+  /*left: 0;*/
+  /*right: 0;*/
+  /*margin: auto;*/
+  /*border-radius: 50%;*/
 }
 
 .svgContainer {

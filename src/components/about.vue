@@ -17,168 +17,172 @@
       <img class="banner" src="../assets/aboutNick2.jpg" alt="Sandboarding in the huacachina desert">
     </div>
     <div class="divider"><span></span><span>About Me</span><span></span></div>
+    <div v-if="!isMobile">
+      <b-container class="aboutSection">
+        <b-row>
+          <b-col>
+            <div>
+              <b-card
+                  title="Background"
+                  img-alt="Image"
+                  img-top
+                  tag="article"
+                  class="aboutCard"
+              >
+                <b-card-text>
+                  <b-list-group >
+                    <b-list-group-item class="listItem"> Born in Grand Rapids, Michigan <br/>
+                      Raised in Quintana Roo Mexico
 
-    <b-container class="aboutSection">
-      <b-row>
-        <b-col>
-          <div>
+                    </b-list-group-item>
+
+                    <b-list-group-item class="listItem">4th year undergraduate at Indiana University Luddy School, class of 2021.</b-list-group-item>
+                    <b-list-group-item class="listItem">
+                      Student of Computer Science (B.S) and Philosophy
+                    </b-list-group-item>
+                    <b-list-group-item class="listItem">
+                      Member of the Hutton Honors College, and President of the IU Philosophy Club (2019 - 2020)
+                    </b-list-group-item>
+                    <b-list-group-item class="listItem">
+                      Bilingual (English and Spanish)
+                    </b-list-group-item>
+                  </b-list-group>
+                </b-card-text>
+              </b-card>
+            </div>
+          </b-col>
+          <b-col><div>
             <b-card
-                title="Background"
+                title="Skills"
                 img-alt="Image"
                 img-top
                 tag="article"
                 class="aboutCard"
             >
               <b-card-text>
-                <b-list-group >
-                  <b-list-group-item class="listItem"> Born in Grand Rapids, Michigan <br/>
-                    Raised in Quintana Roo Mexico
+                <h5>Web Technologies</h5> <i style="font-size: 10px">*Highly Proficient</i>
+                <hr />
+                <ul>
+                  <li>
+                    Vue.js*
+                  </li>
+                  <li>
+                    Django*
+                  </li>
+                  <li>
+                    JavaScript/CSS/HTML*
+                  </li>
+                  <li>
+                    Angular
+                  </li>
+                  <li>
+                    Leaflet/Google Maps*
+                  </li>
+                  <li>
+                    Wagtail
+                  </li>
+                  <li>
+                    Node.js
+                  </li>
+                  <li>
+                    MySQL
+                  </li>
+                  <li>
+                    MongoDB
+                  </li>
+                  <li>
+                    Apache Airavata*
+                  </li>
+                </ul>
 
-                  </b-list-group-item>
+                <h5>Programming Languages</h5>
+                <hr />
+                <ul>
+                  <li>
+                    Python
+                  </li>
+                  <li>
+                    Javascript*
+                  </li>
+                  <li>
+                    Java*
+                  </li>
+                  <li>
+                    C
+                  </li>
+                  <li>
+                    Lisp
+                  </li>
 
-                  <b-list-group-item class="listItem">4th year undergraduate at Indiana University Luddy School, class of 2021.</b-list-group-item>
-                  <b-list-group-item class="listItem">
-                    Student of Computer Science (B.S) and Philosophy
-                  </b-list-group-item>
-                  <b-list-group-item class="listItem">
-                    Member of the Hutton Honors College, and President of the IU Philosophy Club (2019 - 2020)
-                  </b-list-group-item>
-                  <b-list-group-item class="listItem">
-                    Bilingual (English and Spanish)
-                  </b-list-group-item>
-                </b-list-group>
+                </ul>
               </b-card-text>
+              <b-button @click="work" variant="secondary">View My Work</b-button>
             </b-card>
           </div>
-        </b-col>
-        <b-col><div>
-          <b-card
-              title="Skills"
-              img-alt="Image"
-              img-top
-              tag="article"
-              class="aboutCard"
-          >
-            <b-card-text>
-              <h5>Web Technologies</h5> <i style="font-size: 10px">*Highly Proficient</i>
-              <hr />
-              <ul>
-                <li>
-                  Vue.js*
-                </li>
-                <li>
-                  Django*
-                </li>
-                <li>
-                  JavaScript/CSS/HTML*
-                </li>
-                <li>
-                  Angular
-                </li>
-                <li>
-                  Leaflet/Google Maps*
-                </li>
-                <li>
-                  Wagtail
-                </li>
-                <li>
-                  Node.js
-                </li>
-                <li>
-                  MySQL
-                </li>
-                <li>
-                  MongoDB
-                </li>
-                <li>
-                  Apache Airavata*
-                </li>
-              </ul>
+          </b-col>
+          <b-col><div>
+            <b-card
+                title="Experience"
+                img-alt="Image"
+                img-top
+                tag="article"
+                class="aboutCard"
+            >
+              <b-card-text>
+                <h5>Google Summer of Code</h5>
+                <ul>
+                  <li>
+                    @ The Apache Software Foundation
+                  </li>
+                  <li>
+                    Worked on the Apache Airavata Supercomputing framework
+                  </li>
+                  <li>
+                    Helped to integrate Science Gateway with Airavata API
+                  </li>
 
-              <h5>Programming Languages</h5>
-              <hr />
-              <ul>
-                <li>
-                  Python
-                </li>
-                <li>
-                  Javascript*
-                </li>
-                <li>
-                  Java*
-                </li>
-                <li>
-                  C
-                </li>
-                <li>
-                  Lisp
-                </li>
+                </ul>
+                <b-button  v-b-modal.gsoc>Certificate of Completion</b-button>
+                <hr />
+                <h5>Student Developer | CIRC</h5>
+                <ul>
+                  <li>
+                    NASA JPL Quakes team <br /> (Andrea Donnelan: PI)
+                  </li>
+                  <li>
+                    Updated software stack and built GeoGateway webapp from scratch
+                  </li>
+                  <li>
+                    GeoGateway is used by geophysicists around the world to analyze, dispaly, and present geophysical data
+                  </li>
+                </ul>
+                <b-button href="https://science.jpl.nasa.gov/projects/GeoGateway/" variant="secondary">JPL GeoGateway Project page</b-button>
 
-              </ul>
-            </b-card-text>
-            <b-button @click="work" variant="secondary">View My Work</b-button>
-          </b-card>
-        </div>
-        </b-col>
-        <b-col><div>
-          <b-card
-              title="Experience"
-              img-alt="Image"
-              img-top
-              tag="article"
-              class="aboutCard"
-          >
-            <b-card-text>
-              <h5>Google Summer of Code</h5>
-             <ul>
-               <li>
-                  @ The Apache Software Foundation
-               </li>
-               <li>
-                 Worked on the Apache Airavata Supercomputing framework
-               </li>
-               <li>
-                 Helped to integrate Science Gateway with Airavata API
-               </li>
+                <hr />
+                <h5>Project Assistant | <br/> Indiana Geological Survey</h5>
+                <ul>
+                  <li>
+                    Digital Exhibit Assistant <br /> (Polly Sturgeon: PI)
+                  </li>
+                  <li>
+                    Used ESRI Storymaps to create digital exhibit for IU Bicentennial
+                  </li>
+                </ul>
+                <hr />
+                <b-button  variant="dark" v-b-modal.cv>View CV for more details</b-button>
+              </b-card-text>
 
-             </ul>
-              <b-button  v-b-modal.gsoc>Certificate of Completion</b-button>
-              <hr />
-              <h5>Student Developer | CIRC</h5>
-              <ul>
-                <li>
-                  NASA JPL Quakes team <br /> (Andrea Donnelan: PI)
-                </li>
-                <li>
-                  Updated software stack and built GeoGateway webapp from scratch
-                </li>
-                <li>
-                  GeoGateway is used by geophysicists around the world to analyze, dispaly, and present geophysical data
-                </li>
-              </ul>
-              <b-button href="https://science.jpl.nasa.gov/projects/GeoGateway/" variant="secondary">JPL GeoGateway Project page</b-button>
-
-              <hr />
-              <h5>Project Assistant | <br/> Indiana Geological Survey</h5>
-              <ul>
-                <li>
-                  Digital Exhibit Assistant <br /> (Polly Sturgeon: PI)
-                </li>
-                <li>
-                  Used ESRI Storymaps to create digital exhibit for IU Bicentennial
-                </li>
-              </ul>
-              <hr />
-              <b-button  variant="dark" v-b-modal.cv>View CV for more details</b-button>
-            </b-card-text>
-
-          </b-card>
-        </div>
-        </b-col>
-      </b-row>
-    </b-container>
-    <br />
-    <br />
+            </b-card>
+          </div>
+          </b-col>
+        </b-row>
+      </b-container>
+      <br />
+      <br />
+    </div>
+    <div v-else>
+      <mobileAbout/>
+    </div>
   </div>
 </template>
 
@@ -186,6 +190,7 @@
 import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
 import pdf from 'vue-pdf'
+import mobileAbout from "@/components/mobileAbout";
 export default {
   name: "about",
   data(){
@@ -209,7 +214,8 @@ export default {
     }
   },
   components: {
-    pdf
+    pdf,
+    mobileAbout
   },
   methods : {
     work(){
@@ -219,6 +225,9 @@ export default {
       L.marker([19.263021, -87.450912], {icon: this.startIcon}).addTo(this.map)
           .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
           .openPopup();
+    },
+    isMobile() {
+      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     },
 
   },
