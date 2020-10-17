@@ -27,6 +27,7 @@ const router = new VueRouter({
     {path: '/contact', component: contact},
     {path: '/about', component: about },
     {path: '/maps-for-democracy', component: map}
+    
   ]
 });
 
