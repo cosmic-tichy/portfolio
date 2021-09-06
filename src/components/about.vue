@@ -17,7 +17,7 @@
       <img class="banner" src="../assets/aboutNick2.jpg" alt="Sandboarding in the huacachina desert">
     </div>
     <div class="divider"><span></span><span>About Me</span><span></span></div>
-    <div v-if="!isMobile">
+    <div v-if="isMobile">
       <b-container class="aboutSection">
         <b-row>
           <b-col>
@@ -32,19 +32,34 @@
                 <b-card-text>
                   <b-list-group >
                     <b-list-group-item class="listItem"> Born in Grand Rapids, Michigan <br/>
-                      Raised in Quintana Roo Mexico
-
+                      Raised in Quintana Roo Mexico <br/>
+                      Living in Washington DC.
                     </b-list-group-item>
-
-                    <b-list-group-item class="listItem">4th year undergraduate at Indiana University Luddy School, class of 2021.</b-list-group-item>
+                    <b-list-group-item class="listItem">Current Junior GIS Software Engineer at <a href="https://www.ara.com/">Applied Research Associates</a> in Arlington, VA.</b-list-group-item>
                     <b-list-group-item class="listItem">
-                      Student of Computer Science (B.S) and Philosophy
+                      B.S. in Computer Science from Indiana University Luddy School with a minor in Philosophy.
                     </b-list-group-item>
-                    <b-list-group-item class="listItem">
-                      Member of the Hutton Honors College, and President of the IU Philosophy Club (2019 - 2020)
-                    </b-list-group-item>
+
                     <b-list-group-item class="listItem">
                       Bilingual (English and Spanish)
+                    </b-list-group-item>
+                  </b-list-group>
+                </b-card-text>
+              </b-card>
+
+              <b-card
+                  title="Outside Work"
+                  img-alt="Image"
+                  img-top
+                  tag="article"
+                  class="aboutCard"
+                  style="margin-top: 10px"
+              >
+                <b-card-text>
+                  <b-list-group >
+                    <b-list-group-item class="listItem"> Born in Grand Rapids, Michigan <br/>
+                      Raised in Quintana Roo Mexico <br/>
+                      Living in Washington DC.
                     </b-list-group-item>
                   </b-list-group>
                 </b-card-text>
@@ -99,7 +114,7 @@
                 <hr />
                 <ul>
                   <li>
-                    Python
+                    Python*
                   </li>
                   <li>
                     Javascript*
@@ -111,7 +126,7 @@
                     C
                   </li>
                   <li>
-                    Lisp
+                    Bash/Shell
                   </li>
 
                 </ul>
@@ -210,7 +225,7 @@ export default {
       return require('file-loader!../assets/Completion_2020_1010.pdf');
     },
     cv(){
-      return require('file-loader!../assets/Mowery_Nicholas_Resume2.pdf')
+      return require('file-loader!../assets/MoweryResumeJune2021.pdf')
     }
   },
   components: {
@@ -350,7 +365,9 @@ hr {
 
   height: 100%;
 }
-
+a {
+  color: #4F5D75;
+}
 i {
   font-size: 12px;
 }

@@ -278,7 +278,7 @@ export default {
 
   methods: {
     geogateway() {
-      window.open('https://beta.geogateway.scigap.org/auth/login')
+      window.open('https://geogateway.org')
     },
     megajeff() {
       window.open('https://igws.indiana.edu/megajeff/')
@@ -287,7 +287,7 @@ export default {
       active ? this.activeColor = '#2D3142' : this.activeColor = '#EF8354'
     },
     currentProj() {
-      this.$router.push('/maps-for-democracy')
+      this.$router.push('/mayaProject')
     },
     about() {
       this.$router.push('/about')

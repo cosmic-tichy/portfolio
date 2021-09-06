@@ -1,5 +1,6 @@
 <template>
   <div id="navWindow">
+
   </div>
 </template>
 

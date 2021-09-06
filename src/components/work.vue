@@ -411,7 +411,7 @@ export default {
       active ? this.activeColor = '#2D3142' : this.activeColor = '#EF8354'
     },
     currentProj() {
-      this.$router.push('/maps-for-democracy')
+      this.$router.push('/mayaProject')
     },
     about() {
       this.$router.push('/about')
