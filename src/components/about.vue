@@ -47,23 +47,23 @@
                 </b-card-text>
               </b-card>
 
-              <b-card
-                  title="Outside Work"
-                  img-alt="Image"
-                  img-top
-                  tag="article"
-                  class="aboutCard"
-                  style="margin-top: 10px"
-              >
-                <b-card-text>
-                  <b-list-group >
-                    <b-list-group-item class="listItem"> Born in Grand Rapids, Michigan <br/>
-                      Raised in Quintana Roo Mexico <br/>
-                      Living in Washington DC.
-                    </b-list-group-item>
-                  </b-list-group>
-                </b-card-text>
-              </b-card>
+<!--              <b-card-->
+<!--                  title="Outside Work"-->
+<!--                  img-alt="Image"-->
+<!--                  img-top-->
+<!--                  tag="article"-->
+<!--                  class="aboutCard"-->
+<!--                  style="margin-top: 10px"-->
+<!--              >-->
+<!--                <b-card-text>-->
+<!--                  <b-list-group >-->
+<!--                    <b-list-group-item class="listItem"> Born in Grand Rapids, Michigan <br/>-->
+<!--                      Raised in Quintana Roo Mexico <br/>-->
+<!--                      Living in Washington DC.-->
+<!--                    </b-list-group-item>-->
+<!--                  </b-list-group>-->
+<!--                </b-card-text>-->
+<!--              </b-card>-->
             </div>
           </b-col>
           <b-col><div>
