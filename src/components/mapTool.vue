@@ -1,25 +1,29 @@
 <template>
-  <div id="tabs">
-    <b-tabs small pills card>
-      <b-tab>tab1</b-tab>
-      <b-tab>tab2</b-tab>
-    </b-tabs>
+  <div>
+    <div class="title">
+      <div class="divider"><span></span><span>Maya Site Map</span><span></span></div>
+    </div>
+  <div id="controls">
+    <b-checkbox class="control" v-mode="showSites" @change="loadGeoJson"><p>Show Sites</p></b-checkbox>
+  </div>
   </div>
 </template>
 
 <script>
 
 // import L from 'leaflet'
+import {bus} from '../main'
 export default {
-  name: "ToolTabs",
+  name: "mapTool",
   components: {
   },
   data (){
     return {
-      tabIndex: 0,
+      showSites: true,
     }
   },
   mounted() {
+    // temporarily load GJ on mount
 
   },
   watch: {
@@ -34,17 +38,33 @@ export default {
 
   },
   methods: {
-
-    },
+    loadGeoJson(){
+      bus.$emit('loadGJ');
+    }
+  },
 
 }
 </script>
 
 <style >
-#tabs {
+#controls {
   width: auto;
-  background-color: #e6e6ff;
+  margin-left: 10%;
 
+}
+
+.control{
+  color: #1f77b4;
+}
+
+h2{
+  color: #A5B9CC;
+  font-family: Ubuntu;
+}
+
+.title {
+  text-align: center;
+  margin-top: 20px;
 }
 
 .tab-text {
@@ -71,6 +91,42 @@ label {
   color: #343a40 ;
 }
 p {
-  color: #343a40;
+  color: #A5B9CC;
 }
+
+.divider {								/* minor cosmetics */
+  display: table;
+  font-size: 24px;
+  font-family: Ubuntu;
+  text-align: center;
+  width: 75%; 						/* divider width */
+  margin: 40px auto;					/* spacing above/below */
+}
+.divider span { display: table-cell; position: relative; }
+.divider span:first-child, .divider span:last-child {
+  width: 50%;
+  top: 13px;							/* adjust vertical align */
+  -moz-background-size: 100% 2px; 	/* line width */
+  background-size: 100% 2px; 			/* line width */
+  background-position: 0 0, 0 100%;
+  background-repeat: no-repeat;
+}
+.divider span:first-child {				/* color changes in here */
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(transparent), to(#A5B9CC));
+  background-image: -webkit-linear-gradient(180deg, transparent, #A5B9CC);
+  background-image: -moz-linear-gradient(180deg, transparent, #A5B9CC);
+  background-image: -o-linear-gradient(180deg, transparent, #A5B9CC);
+  background-image: linear-gradient(90deg, transparent, #A5B9CC);
+}
+.divider span:nth-child(2) {
+  color: #A5B9CC; padding: 0px 5px; width: auto; white-space: nowrap;
+}
+.divider span:last-child { /* color changes in here */
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#A5B9CC), to(transparent));
+  background-image: -webkit-linear-gradient(180deg, #A5B9CC, transparent);
+  background-image: -moz-linear-gradient(180deg, #A5B9CC, transparent);
+  background-image: -o-linear-gradient(180deg, #A5B9CC, transparent);
+  background-image: linear-gradient(90deg, #A5B9CC, transparent);
+}
+
 </style>
