@@ -300,14 +300,6 @@ c52 -41 18 -99 -59 -99 -32 0 -51 6 -65 20 -26 26 -25 46 5 75 30 31 82 33
       <div class="visitButton">
         <nav>
           <ul>
-            <li class="orangeButton" @mouseover="workColor(true)" @mouseleave="workColor(false)" @click="currentProj">
-              Active Project
-              <span></span><span></span><span></span><span></span>
-            </li>
-          </ul>
-        </nav>
-        <nav>
-          <ul>
             <li class="orangeButton" @mouseover="workColor(true)" @mouseleave="workColor(false)" @click="about">
               About Me
               <span></span><span></span><span></span><span></span>
@@ -402,7 +394,7 @@ export default {
 
   methods: {
     geogateway() {
-      window.open('https://beta.geogateway.scigap.org/auth/login')
+      window.open('geo-gateway.org')
     },
     megajeff() {
       window.open('https://igws.indiana.edu/megajeff/')

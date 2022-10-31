@@ -35,7 +35,7 @@
                       Raised in Quintana Roo Mexico <br/>
                       Living in Washington DC.
                     </b-list-group-item>
-                    <b-list-group-item class="listItem">Current Junior GIS Software Engineer at <a href="https://www.ara.com/">Applied Research Associates</a> in Arlington, VA.</b-list-group-item>
+                    <b-list-group-item class="listItem">Current Staff Software Engineer at <a href="https://www.ara.com/">Applied Research Associates</a> in Washington, DC.</b-list-group-item>
                     <b-list-group-item class="listItem">
                       B.S. in Computer Science from Indiana University Luddy School with a minor in Philosophy.
                     </b-list-group-item>
@@ -128,7 +128,14 @@
                   <li>
                     Bash/Shell
                   </li>
+                </ul>
 
+                <h5>Audio Engineering/Producing</h5>
+                <hr/>
+                <ul>
+                  <li>
+                    Ableton Live*: Recording, Producing, Mastering
+                  </li>
                 </ul>
               </b-card-text>
               <b-button @click="work" variant="secondary">View My Work</b-button>
