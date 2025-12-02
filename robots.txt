@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://cosmic-tichy.github.io/al-folio/sitemap.xml
