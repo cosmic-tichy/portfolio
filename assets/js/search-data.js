@@ -9,16 +9,9 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/portfolio/";
     },
-  },{id: "nav-blog",
-          title: "blog",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/portfolio/blog/";
-          },
-        },{id: "nav-cosmic-itch",
+  },{id: "nav-cosmic-itch",
           title: "Cosmic Itch",
-          description: "An alias for Nick&#39;s over-the-top themed live techno sets",
+          description: "An alias for Nick&#39;s over-the-top themed live techno sets. Cosmic Itch combines home-brewed Ableton instruments, Elektron machines and strange sample collections to create wild performances.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/portfolio/cosmicitch/";
