@@ -38,40 +38,17 @@ layout: default
       </div>
     {% endif %}
 
-    <div class="clearfix">{{ content }}</div>
+    <div class="clearfix"></div>
 
-    <!-- News -->
-    {% if page.announcements and page.announcements.enabled %}
-      <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
-      </h2>
-      {% include news.liquid limit=true %}
-    {% endif %}
-
-    <!-- Latest posts -->
-    {% if page.latest_posts and page.latest_posts.enabled %}
-      <h2>
-        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
-      </h2>
-      {% include latest_posts.liquid %}
-    {% endif %}
-
-    <!-- Selected papers -->
-    {% if page.selected_papers %}
-      <h2>
-        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
-      </h2>
-      {% include selected_papers.liquid %}
-    {% endif %}
-
-    <!-- Social -->
-    {% if page.social %}
-      <div class="social">
-        <div class="contact-icons">{% include social.liquid %}</div>
-
-        <div class="contact-note">{{ site.contact_note }}</div>
-      </div>
-    {% endif %}
+    <!-- Custom social links -->
+    <div class="social-links" style="margin-top: 2rem;">
+      <p style="margin: 0; color: #6c757d;">
+        <a href="https://nickmowery.bandcamp.com/album/all-the-ships-have-gone" style="color: #6c757d; text-decoration: none; margin-right: 1.5rem;">Bandcamp</a>
+        <a href="https://soundcloud.com/cosmictichy" style="color: #6c757d; text-decoration: none; margin-right: 1.5rem;">Soundcloud</a>
+        <a href="https://open.spotify.com/artist/yourartistid" style="color: #6c757d; text-decoration: none; margin-right: 1.5rem;">Spotify</a>
+        <a href="https://www.instagram.com/nick_mowery_/" style="color: #6c757d; text-decoration: none;">Instagram</a>
+      </p>
+    </div>
 
     {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
       {% include newsletter.liquid center=true %}

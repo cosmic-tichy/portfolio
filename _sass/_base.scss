@@ -2,6 +2,28 @@
  * Styles for the base elements of the theme.
  ******************************************************************************/
 
+// Remove navbar border
+nav.navbar {
+  border-bottom: none !important;
+}
+
+// Left-align socials
+.social {
+  text-align: left;
+
+  .contact-icons a {
+    color: #6c757d;
+    text-decoration: none;
+    margin-right: 1rem;
+    font-size: 1rem;
+
+    &:hover {
+      color: var(--global-text-color);
+      text-decoration: underline;
+    }
+  }
+}
+
 // Typography
 
 p,
