@@ -50,8 +50,14 @@ layout: default
       </p>
     </div>
 
+    <!-- Contact Me button -->
+   
+
     {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
       {% include newsletter.liquid center=true %}
     {% endif %}
   </article>
+   <div style="margin-top: 1rem;">
+      <a href="mailto:nickmowerymusic@gmail.com" class="btn font-weight-bold" style="background-image: url('{{ '/000094850011.jpg' | relative_url }}'); background-size: cover; background-position: center; color: white; border: none; padding: 0.5rem 1rem;">Contact Me</a>
+    </div>
 </div>

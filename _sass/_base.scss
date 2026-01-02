@@ -2,9 +2,9 @@
  * Styles for the base elements of the theme.
  ******************************************************************************/
 
-// Remove navbar border
-nav.navbar {
-  border-bottom: none !important;
+// Force permanent light theme
+html {
+  color-scheme: light !important;
 }
 
 // Left-align socials
