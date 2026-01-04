@@ -1,6 +1,23 @@
 ---
 layout: default
 ---
+<style>
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+.album-announcement {
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2em;
+  font-weight: bold;
+  color: red;
+  animation: blink 1s infinite;
+  text-decoration: none;
+}
+</style>
 <div class="post">
   <header class="post-header">
     <h1 class="post-title">
@@ -16,7 +33,7 @@ layout: default
 
   <article>
     {% if page.profile %}
-      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
+      <div class="profile float-left" style="position: relative;">
         {% if page.profile.image %}
           {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
           {% if page.profile.image_circular %}
@@ -35,6 +52,9 @@ layout: default
         {% if page.profile.more_info %}
           <div class="more-info">{{ page.profile.more_info }}</div>
         {% endif %}
+        <a href="https://nickmowery.bandcamp.com/album/all-the-ships-have-gone" class="album-announcement">
+          Album available January 21st
+        </a>
       </div>
     {% endif %}
 
