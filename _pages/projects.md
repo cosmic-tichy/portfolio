@@ -94,6 +94,11 @@ nav_order: 3
       </div>
     </div>
   </div>
+  <div class="row">
+    <div class="col-12 text-center">
+      <img src="{{ '/assets/img/deathMachineMood.png' | relative_url }}" alt="Death Machine Mood" class="img-fluid mb-4">
+    </div>
+  </div>
 </div>
 <h3 style="margin-top: 3rem; margin-bottom: 3rem; padding-bottom: 1rem; border-bottom: 2px solid #ddd;">Other Projects</h3>
 <div class="container" style="margin-top: 1.5rem;">
