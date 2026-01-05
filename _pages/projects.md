@@ -100,6 +100,33 @@ nav_order: 3
     </div>
   </div>
 </div>
+<h3 style="margin-top: 3rem; margin-bottom: 3rem; padding-bottom: 1rem; border-bottom: 2px solid #ddd;">Max MSP</h3>
+<div class="container" style="margin-top: 1.5rem;">
+  <div class="row align-items-start">
+    <!-- Videos Column -->
+    <div class="col-md-6 text-center">
+     <div class="mb-4">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/DsCdGpUMhS0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerPolicy="origin"></iframe>
+      </div>
+      <div class="mb-4">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/UNA45Q-5Y7o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerPolicy="origin"></iframe>
+      </div>
+     
+    </div>
+    <!-- Text Column -->
+    <div class="col-md-6">
+      <div class="ps-4">
+        <p>Cosmic Itch has also created a number of Max4Live patches to accompany his performances. With a background in computer science, Max MSP presents no obstacle to expression. These reactive textures only serve as an introduction. 
+        </p>
+        <br/>
+        <p>Itch has found that the real fertile ground is in the gathering of source material. He spends hours surfing strange content on archive.org and chops and mangles it with python scripts to create audio collages and audio-visual experiences. Please reach out via email for more demos.</p>
+        <div class="mb-4">
+          <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https://soundcloud.com/cosmictichy/audio-collage-feb-set"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <h3 style="margin-top: 3rem; margin-bottom: 3rem; padding-bottom: 1rem; border-bottom: 2px solid #ddd;">Other Projects</h3>
 <div class="container" style="margin-top: 1.5rem;">
   <div class="row justify-content-center">
@@ -116,3 +143,5 @@ nav_order: 3
     </div>
   </div>
 </div>
+
+<h3 style="margin-top: 3rem; margin-bottom: 3rem; padding-bottom: 1rem; border-bottom: 2px solid #ddd;">Reach out via email for more demos or information on Cosmic Itch</h3>
