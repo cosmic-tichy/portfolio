@@ -1,147 +1,298 @@
+
 ---
 layout: page
 title: Cosmic Itch
 permalink: /cosmicitch/
-description: An alias for Nick's over-the-top themed live techno sets. Cosmic Itch combines home-brewed Ableton instruments, Elektron machines and strange sample collections to create wild performances.
+description: Live techno, custom instruments, and audio-visual experiments.
 nav: true
 nav_order: 3
 ---
 
-<h3 style="margin-top: 0; margin-bottom: 3rem; padding-bottom: 1rem; border-bottom: 2px solid #ddd;">Ye Olde Rave: One Monk's Sonic Journey</h3>
+<style>
+.ci-portfolio {
+  background: #101115;
+  color: #f1f1f1;
+  padding: clamp(1.25rem, 4vw, 3rem);
+  border-radius: 12px;
+}
 
-<div class="container" style="margin-top: 1.5rem;">
-  <div class="row align-items-start">
-    <!-- Text and Images Column (left) -->
-    <div class="col-md-6">
-      <div class="ps-4">
-        <img src="{{ '/assets/img/YeOldeRaveFlyer.jpg' | relative_url }}" alt="Ye Olde Rave Flyer" class="img-fluid mb-4">
-        <div class="row align-items-start">
-          <div class="col-md-6">
-            <p>
-              Ye Olde Rave follows the journey of a benedictine monk who is cast out from his abbey after sharing his heretical polyphonic vision. 
-              Marked by 4 monologues and 1 hour of dance music, ye olde rave is heavily inspired by Hildegard von Bingen and supported by months of research into medieval church music. 
-            </p>
-          </div>
-          <div class="col-md-6">
-            <div style="margin: 0; text-align: center;">
-              <div style="margin-bottom: 0.5rem;">
-                <strong style="font-size: 0.9rem; color: #6c757d;">Monophonic plainchant</strong>
-                <div style="font-size: 1.2rem; margin: 0.05rem 0; color: #6c757d;">↓</div>
-              </div>
-              <div style="margin-bottom: 0.5rem;">
-                <strong style="font-size: 0.9rem; color: #6c757d;">Drone Organum</strong>
-                <div style="font-size: 1.2rem; margin: 0.05rem 0; color: #6c757d;">↓</div>
-              </div>
-              <div style="margin-bottom: 0.5rem;">
-                <strong style="font-size: 0.9rem; color: #6c757d;">Parallel Organum</strong>
-                <div style="font-size: 1.2rem; margin: 0.05rem 0; color: #6c757d;">↓</div>
-              </div>
-              <div style="margin-bottom: 0.5rem;">
-                <strong style="font-size: 0.9rem; color: #6c757d;">Oblique Organum</strong>
-                <div style="font-size: 1.2rem; margin: 0.05rem 0; color: #6c757d;">↓</div>
-              </div>
-              <div style="margin-bottom: 0.5rem;">
-                <strong style="font-size: 0.9rem; color: #6c757d;">Free Organum</strong>
-                <div style="font-size: 1.2rem; margin: 0.05rem 0; color: #6c757d;">↓</div>
-              </div>
-              <div style="margin-bottom: 0.5rem;">
-                <strong style="font-size: 0.9rem; color: #6c757d;">Techno</strong>
-              </div>
-            </div>
-          </div>
+.ci-portfolio h2 {
+  color: #f1f1f1;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0 0 1.2rem;
+}
+
+.ci-intro {
+  max-width: 680px;
+  margin-bottom: 3rem;
+}
+
+.ci-intro p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #a8aab1;
+}
+
+.ci-label {
+  font-size: .7rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: #91939c;
+  margin-bottom: .8rem;
+}
+
+.ci-section {
+  margin-bottom: 3.5rem;
+}
+
+.ci-featured iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  display: block;
+  border-radius: 6px;
+}
+
+.ci-video-title {
+  margin-top: .8rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.ci-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, 260px), 1fr)
+  );
+  gap: 1.5rem;
+}
+
+.ci-card {
+  display: block;
+  text-decoration: none !important;
+  color: #f1f1f1 !important;
+}
+
+.ci-thumb {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #222;
+}
+
+.ci-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .3s ease, opacity .3s ease;
+}
+
+.ci-card:hover img {
+  transform: scale(1.035);
+  opacity: .8;
+}
+
+.ci-play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,.65);
+  color: white;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  font-size: 1.1rem;
+}
+
+.ci-card-title {
+  font-size: .95rem;
+  font-weight: 600;
+  margin-top: .7rem;
+}
+
+.ci-card-subtitle {
+  font-size: .8rem;
+  color: #91939c;
+  margin-top: .2rem;
+}
+
+.ci-more {
+  border-top: 1px solid #33363d;
+  padding-top: 1.25rem;
+}
+
+.ci-more summary {
+  cursor: pointer;
+  color: #c2c4cb;
+  font-size: .95rem;
+  padding: .5rem 0;
+}
+
+.ci-more .ci-grid {
+  margin-top: 1.5rem;
+}
+
+.ci-footer {
+  border-top: 1px solid #33363d;
+  padding-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.ci-footer a {
+  color: #f1f1f1 !important;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+</style>
+
+<div class="ci-portfolio">
+
+  <header class="ci-intro">
+    <div class="ci-label">
+      Live Electronic Performance
+    </div>
+    <p>
+      Cosmic Itch creates dark, high-energy live techno
+      using Elektron machines, custom Ableton instruments,
+      Max for Live, and unconventional sample collections.
+    </p>
+  </header>
+
+  <!-- FEATURED VIDEO -->
+  <section class="ci-section ci-featured">
+    <div class="ci-label">Featured Performance</div>
+
+    <iframe
+      src="https://www.youtube-nocookie.com/embed/WDB72F_d7NQ"
+      title="Death Machine Live Performance"
+      allow="accelerometer; autoplay; clipboard-write;
+             encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+
+    <div class="ci-video-title">
+      Death Machine — Live Performance
+    </div>
+  </section>
+
+  <!-- SELECTED PERFORMANCES -->
+  <section class="ci-section">
+    <h2>Selected Performances</h2>
+
+    <div class="ci-grid">
+
+      <a class="ci-card"
+         href="https://www.youtube.com/watch?v=oJL-5jxMEn8"
+         target="_blank" rel="noopener noreferrer">
+        <div class="ci-thumb">
+          <img loading="lazy"
+               src="https://img.youtube.com/vi/oJL-5jxMEn8/hqdefault.jpg"
+               alt="Ye Olde Rave performance">
+          <span class="ci-play" aria-hidden="true">▶</span>
         </div>
-      </div>
-    </div>
+        <div class="ci-card-title">Ye Olde Rave</div>
+        <div class="ci-card-subtitle">Live performance</div>
+      </a>
 
-    <!-- Videos Column (right) -->
-    <div class="col-md-6 text-center">
-
-      <div class="mb-4">
-        <iframe width="100%" height="315" src="https://www.youtube.com/embed/oJL-5jxMEn8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerPolicy="origin"></iframe>
-      </div>
-
-      <div class="mb-4">
-        <iframe width="100%" height="315" src="https://www.youtube.com/embed/LHg1E55Mty4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerPolicy="origin"></iframe>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Death Machine Section -->
-<h3 style="margin-top: 3rem; margin-bottom: 3rem; padding-bottom: 1rem; border-bottom: 2px solid #ddd;">Death Machine</h3>
-<div class="container" style="margin-top: 1.5rem;">
-  <div class="row align-items-start">
-    <!-- Images Column: flyer first -->
-    <div class="col-md-6 text-center">
-     <img src="{{ '/assets/img/SinDenHalloween-2.png' | relative_url }}" alt="Sin Den Halloween" class="img-fluid mb-4">
-    </div>
-    <!-- Text Column -->
-    <div class="col-md-6">
-      <div class="ps-4">
-        <p style="font-size:1.375rem; font-weight:600; font-style:italic; margin:0 0 1rem 0; color:#343a40;">
-          <q>The machines will churn forever while we rot.</q>
-        </p>
-        <p>
-        Cosmic Itch channeled the works of Ryoji Ikeda, Harlan Ellison and imagery from Heavy Metal Magazine to create a set equal parts alientating and irresistably danceable. Built on clicks, white nosie and crackling bass, Death Machine sends you to a world of primordial steel and vast emptiness. Cosmic Itch's most ambitious set yet. Please reach out via the Contact form for audio demos of Death Machine.
-        </p>
-        <p style="font-size:1.375rem; font-weight:600; font-style:italic; margin:0.5rem 0 1rem 0; color:#343a40;">
-          <q>The machines will grind your bones to dust.</q>
-        </p>
-
-        <div class="mb-4">
-          <iframe width="100%" height="315" src="https://www.youtube.com/embed/WDB72F_d7NQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerPolicy="origin"></iframe>
+      <a class="ci-card"
+         href="https://www.youtube.com/watch?v=LHg1E55Mty4"
+         target="_blank" rel="noopener noreferrer">
+        <div class="ci-thumb">
+          <img loading="lazy"
+               src="https://img.youtube.com/vi/LHg1E55Mty4/hqdefault.jpg"
+               alt="Ye Olde Rave excerpt">
+          <span class="ci-play" aria-hidden="true">▶</span>
         </div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12 text-center">
-      <img src="{{ '/assets/img/deathMachineMood.png' | relative_url }}" alt="Death Machine Mood" class="img-fluid mb-4">
-    </div>
-  </div>
-</div>
-<h3 style="margin-top: 3rem; margin-bottom: 3rem; padding-bottom: 1rem; border-bottom: 2px solid #ddd;">Max MSP</h3>
-<div class="container" style="margin-top: 1.5rem;">
-  <div class="row align-items-start">
-    <!-- Videos Column -->
-    <div class="col-md-6 text-center">
-     <div class="mb-4">
-        <iframe width="100%" height="315" src="https://www.youtube.com/embed/DsCdGpUMhS0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerPolicy="origin"></iframe>
-      </div>
-      <div class="mb-4">
-        <iframe width="100%" height="315" src="https://www.youtube.com/embed/UNA45Q-5Y7o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerPolicy="origin"></iframe>
-      </div>
-     
-    </div>
-    <!-- Text Column -->
-    <div class="col-md-6">
-      <div class="ps-4">
-        <p>Cosmic Itch has also created a number of Max4Live patches to accompany his performances. With a background in computer science, Max MSP presents no obstacle to expression. These reactive textures only serve as an introduction. 
-        </p>
-        <br/>
-        <p>Itch has found that the real fertile ground is in the gathering of source material. He spends hours surfing strange content on archive.org and chops and mangles it with python scripts to create audio collages and audio-visual experiences. Please reach out via email for more demos.</p>
-        <div class="mb-4">
-          <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https://soundcloud.com/cosmictichy/audio-collage-feb-set"></iframe>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<h3 style="margin-top: 3rem; margin-bottom: 3rem; padding-bottom: 1rem; border-bottom: 2px solid #ddd;">Other Projects</h3>
-<div class="container" style="margin-top: 1.5rem;">
-  <div class="row justify-content-center">
-    <div class="col-md-8 text-center">
-      <div class="mb-4">
-        <iframe width="100%" height="315" src="https://www.youtube.com/embed/niWL0ScXeq4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerPolicy="origin"></iframe>
-      </div>
-      <div class="mb-4">
-        <iframe width="100%" height="315" src="https://www.youtube.com/embed/B7ZDi5gw2b4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerPolicy="origin"></iframe>
-      </div>
-      <div class="mb-4">
-        <iframe width="100%" height="315" src="https://www.youtube.com/embed/rlGRmKGwnJw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerPolicy="origin"></iframe>
-      </div>
-    </div>
-  </div>
-</div>
+        <div class="ci-card-title">Ye Olde Rave — Excerpt</div>
+        <div class="ci-card-subtitle">Live performance</div>
+      </a>
 
-<h3 style="margin-top: 3rem; margin-bottom: 3rem; padding-bottom: 1rem; border-bottom: 2px solid #ddd;">Reach out via email for more demos or information on Cosmic Itch</h3>
+    </div>
+  </section>
+
+  <!-- MORE PROJECTS -->
+  <details class="ci-section ci-more">
+    <summary>More projects & experiments</summary>
+
+    <div class="ci-grid">
+
+      <a class="ci-card"
+         href="https://www.youtube.com/watch?v=DsCdGpUMhS0"
+         target="_blank" rel="noopener noreferrer">
+        <div class="ci-thumb">
+          <img loading="lazy"
+               src="https://img.youtube.com/vi/DsCdGpUMhS0/hqdefault.jpg"
+               alt="Max MSP experiment">
+          <span class="ci-play" aria-hidden="true">▶</span>
+        </div>
+        <div class="ci-card-title">Max/MSP — 01</div>
+      </a>
+
+      <a class="ci-card"
+         href="https://www.youtube.com/watch?v=UNA45Q-5Y7o"
+         target="_blank" rel="noopener noreferrer">
+        <div class="ci-thumb">
+          <img loading="lazy"
+               src="https://img.youtube.com/vi/UNA45Q-5Y7o/hqdefault.jpg"
+               alt="Max MSP experiment">
+          <span class="ci-play" aria-hidden="true">▶</span>
+        </div>
+        <div class="ci-card-title">Max/MSP — 02</div>
+      </a>
+
+      <a class="ci-card"
+         href="https://www.youtube.com/watch?v=niWL0ScXeq4"
+         target="_blank" rel="noopener noreferrer">
+        <div class="ci-thumb">
+          <img loading="lazy"
+               src="https://img.youtube.com/vi/niWL0ScXeq4/hqdefault.jpg"
+               alt="Experimental project">
+          <span class="ci-play" aria-hidden="true">▶</span>
+        </div>
+        <div class="ci-card-title">Other Project — 01</div>
+      </a>
+
+      <a class="ci-card"
+         href="https://www.youtube.com/watch?v=B7ZDi5gw2b4"
+         target="_blank" rel="noopener noreferrer">
+        <div class="ci-thumb">
+          <img loading="lazy"
+               src="https://img.youtube.com/vi/B7ZDi5gw2b4/hqdefault.jpg"
+               alt="Experimental project">
+          <span class="ci-play" aria-hidden="true">▶</span>
+        </div>
+        <div class="ci-card-title">Other Project — 02</div>
+      </a>
+
+      <a class="ci-card"
+         href="https://www.youtube.com/watch?v=rlGRmKGwnJw"
+         target="_blank" rel="noopener noreferrer">
+        <div class="ci-thumb">
+          <img loading="lazy"
+               src="https://img.youtube.com/vi/rlGRmKGwnJw/hqdefault.jpg"
+               alt="Experimental project">
+          <span class="ci-play" aria-hidden="true">▶</span>
+        </div>
+        <div class="ci-card-title">Other Project — 03</div>
+      </a>
+
+    </div>
+  </details>
+
+  <!-- CONTACT -->
+  <footer class="ci-footer">
+    <a href="{{ '/contact/' | relative_url }}">Contact</a>
+    <a href="https://soundcloud.com/cosmictichy"
+       target="_blank" rel="noopener noreferrer">SoundCloud</a>
+  </footer>
+
+</div>
