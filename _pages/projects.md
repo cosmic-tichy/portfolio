@@ -438,7 +438,6 @@ body:has(.ci-portfolio) .post-header { display: none; }
   </section>
 
   <section class="ci-section ci-other" aria-labelledby="ci-performances-title">
-    <h2 id="ci-performances-title" class="ci-section-title">Other Performances</h2>
     <div class="ci-divider" aria-hidden="true"><span>ᛉ</span></div>
     <div class="ci-video-grid">
       <div class="ci-video-frame">
