@@ -76,30 +76,8 @@ layout: default
 
     <div class="clearfix"></div>
 
-    <!-- Custom social links -->
-    <div class="social-links" style="margin-top: 2rem;">
-      <p style="margin: 0; color: #6c757d;">
-        <a href="https://nickmowery.bandcamp.com/album/all-the-ships-have-gone" style="color: #6c757d; text-decoration: none; margin-right: 1.5rem;"
-          >Bandcamp</a
-        >
-        <a href="https://soundcloud.com/cosmictichy" style="color: #6c757d; text-decoration: none; margin-right: 1.5rem;">Soundcloud</a>
-        <a href="https://open.spotify.com/artist/yourartistid" style="color: #6c757d; text-decoration: none; margin-right: 1.5rem;">Spotify</a>
-        <a href="https://www.instagram.com/nick_mowery_/" style="color: #6c757d; text-decoration: none;">Instagram</a>
-      </p>
-    </div>
-
-    <!-- Contact Me button -->
-
     {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
       {% include newsletter.liquid center=true %}
     {% endif %}
   </article>
-  <div style="margin-top: 1rem;">
-    <a
-      href="mailto:nickmowerymusic@gmail.com"
-      class="btn font-weight-bold"
-      style="background-image: url('{{ '/000094850011.jpg' | relative_url }}'); background-size: cover; background-position: center; color: white; border: none; padding: 0.5rem 1rem;"
-      >Contact Me</a
-    >
-  </div>
 </div>

@@ -1,300 +1,211 @@
 ---
 layout: page
 title: Cosmic Itch
-permalink: /cosmicitch/
+permalink: /
 description: Live techno, custom instruments, and audio-visual experiments.
-nav: true
-nav_order: 3
+nav: false
 ---
 
 <style>
-.ci-portfolio {
-  background: #101115;
-  color: #f1f1f1;
-  padding: clamp(1.25rem, 4vw, 3rem);
-  border-radius: 12px;
-}
+  .ci-portfolio {
+    background: #101115;
+    color: #f1f1f1;
+    padding: clamp(1.25rem, 4vw, 3rem);
+    border-radius: 12px;
+  }
 
-.ci-portfolio h2 {
-  color: #f1f1f1;
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin: 0 0 1.2rem;
-}
+  .ci-intro {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
 
-.ci-intro {
-  max-width: 680px;
-  margin-bottom: 3rem;
-}
+  .ci-press-photo {
+    display: block;
+    width: 96px;
+    height: auto;
+    flex: 0 0 96px;
+    border-radius: 6px;
+  }
 
-.ci-intro p {
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: #a8aab1;
-}
+  .ci-intro p {
+    margin: 0;
+    color: #c2c4cb;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
 
-.ci-label {
-  font-size: .7rem;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-  color: #91939c;
-  margin-bottom: .8rem;
-}
+  .ci-video-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 0.6rem;
+  }
 
-.ci-section {
-  margin-bottom: 3.5rem;
-}
+  .ci-video {
+    min-width: 0;
+  }
 
-.ci-featured iframe {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border: 0;
-  display: block;
-  border-radius: 6px;
-}
+  .ci-video-featured {
+    grid-column: span 6;
+  }
 
-.ci-video-title {
-  margin-top: .8rem;
-  font-size: 1rem;
-  font-weight: 600;
-}
+  .ci-video-secondary {
+    grid-column: span 4;
+  }
 
-.ci-grid {
-  display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(min(100%, 260px), 1fr)
-  );
-  gap: 1.5rem;
-}
+  .ci-video-standard {
+    grid-column: span 2;
+  }
 
-.ci-card {
-  display: block;
-  text-decoration: none !important;
-  color: #f1f1f1 !important;
-}
+  .ci-video h2 {
+    margin: 0 0 0.65rem;
+    color: #f1f1f1;
+    font-size: 1.15rem;
+    font-weight: 600;
+  }
 
-.ci-thumb {
-  position: relative;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  border-radius: 6px;
-  background: #222;
-}
+  .ci-video-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 6px;
+    background: #222;
+  }
 
-.ci-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform .3s ease, opacity .3s ease;
-}
+  .ci-video-frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
 
-.ci-card:hover img {
-  transform: scale(1.035);
-  opacity: .8;
-}
+  .ci-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem 1.5rem;
+    margin-top: 2rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid #33363d;
+  }
 
-.ci-play {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(0,0,0,.65);
-  color: white;
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
-  display: grid;
-  place-items: center;
-  font-size: 1.1rem;
-}
+  .ci-footer a {
+    color: #f1f1f1;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
 
-.ci-card-title {
-  font-size: .95rem;
-  font-weight: 600;
-  margin-top: .7rem;
-}
+  .ci-footer .ci-contact-button {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    background: #f1f1f1;
+    color: #101115;
+    font-weight: 600;
+    text-decoration: none;
+  }
 
-.ci-card-subtitle {
-  font-size: .8rem;
-  color: #91939c;
-  margin-top: .2rem;
-}
+  @media (max-width: 576px) {
+    .ci-video-grid {
+      grid-template-columns: 1fr;
+    }
 
-.ci-more {
-  border-top: 1px solid #33363d;
-  padding-top: 1.25rem;
-}
-
-.ci-more summary {
-  cursor: pointer;
-  color: #c2c4cb;
-  font-size: .95rem;
-  padding: .5rem 0;
-}
-
-.ci-more .ci-grid {
-  margin-top: 1.5rem;
-}
-
-.ci-footer {
-  border-top: 1px solid #33363d;
-  padding-top: 1.5rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-}
-
-.ci-footer a {
-  color: #f1f1f1 !important;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
+    .ci-video-featured,
+    .ci-video-secondary,
+    .ci-video-standard {
+      grid-column: 1;
+    }
+  }
 </style>
 
 <div class="ci-portfolio">
-
   <header class="ci-intro">
-    <div class="ci-label">
-      Live Electronic Performance
-    </div>
+    <img
+      class="ci-press-photo"
+      src="{{ '/prof_pic2.png' | relative_url }}"
+      alt="Press photo of Nick Mowery"
+      loading="eager"
+    >
     <p>
-      Cosmic Itch creates dark, high-energy live techno
-      using Elektron machines, custom Ableton instruments,
-      Max for Live, and unconventional sample collections.
+      Cosmic Itch creates dark, high-energy live techno using Elektron machines,
+      custom Ableton instruments, Max for Live, and unconventional sample
+      collections.
     </p>
   </header>
 
-  <!-- FEATURED VIDEO -->
-  <section class="ci-section ci-featured">
-    <div class="ci-label">Featured Performance</div>
+  <section class="ci-video-grid" aria-label="Cosmic Itch videos">
+    <article class="ci-video ci-video-featured">
+      <h2>Featured Performance</h2>
+      <div class="ci-video-frame">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/7u5X4sU6G-4"
+          title="Cosmic Itch featured video"
+          loading="eager"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </article>
 
-    <iframe
-      src="https://www.youtube-nocookie.com/embed/WDB72F_d7NQ"
-      title="Death Machine Live Performance"
-      allow="accelerometer; autoplay; clipboard-write;
-             encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
+    <article class="ci-video ci-video-secondary">
+      <div class="ci-video-frame">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/8wlKVlbAjvw"
+          title="Cosmic Itch video 2"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </article>
 
-    <div class="ci-video-title">
-      Death Machine — Live Performance
-    </div>
+    <article class="ci-video ci-video-standard">
+      <div class="ci-video-frame">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/evsFMZ7wfB0"
+          title="Cosmic Itch video 3"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </article>
+
+    <article class="ci-video ci-video-standard">
+      <div class="ci-video-frame">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/oJL-5jxMEn8"
+          title="Cosmic Itch video 4"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </article>
 
   </section>
 
-  <!-- SELECTED PERFORMANCES -->
-  <section class="ci-section">
-    <h2>Selected Performances</h2>
-
-    <div class="ci-grid">
-
-      <a class="ci-card"
-         href="https://www.youtube.com/watch?v=oJL-5jxMEn8"
-         target="_blank" rel="noopener noreferrer">
-        <div class="ci-thumb">
-          <img loading="lazy"
-               src="https://img.youtube.com/vi/oJL-5jxMEn8/hqdefault.jpg"
-               alt="Ye Olde Rave performance">
-          <span class="ci-play" aria-hidden="true">▶</span>
-        </div>
-        <div class="ci-card-title">Ye Olde Rave</div>
-        <div class="ci-card-subtitle">Live performance</div>
-      </a>
-
-      <a class="ci-card"
-         href="https://www.youtube.com/watch?v=LHg1E55Mty4"
-         target="_blank" rel="noopener noreferrer">
-        <div class="ci-thumb">
-          <img loading="lazy"
-               src="https://img.youtube.com/vi/LHg1E55Mty4/hqdefault.jpg"
-               alt="Ye Olde Rave excerpt">
-          <span class="ci-play" aria-hidden="true">▶</span>
-        </div>
-        <div class="ci-card-title">Ye Olde Rave — Excerpt</div>
-        <div class="ci-card-subtitle">Live performance</div>
-      </a>
-
-    </div>
-
-  </section>
-
-  <!-- MORE PROJECTS -->
-  <details class="ci-section ci-more">
-    <summary>More projects & experiments</summary>
-
-    <div class="ci-grid">
-
-      <a class="ci-card"
-         href="https://www.youtube.com/watch?v=DsCdGpUMhS0"
-         target="_blank" rel="noopener noreferrer">
-        <div class="ci-thumb">
-          <img loading="lazy"
-               src="https://img.youtube.com/vi/DsCdGpUMhS0/hqdefault.jpg"
-               alt="Max MSP experiment">
-          <span class="ci-play" aria-hidden="true">▶</span>
-        </div>
-        <div class="ci-card-title">Max/MSP — 01</div>
-      </a>
-
-      <a class="ci-card"
-         href="https://www.youtube.com/watch?v=UNA45Q-5Y7o"
-         target="_blank" rel="noopener noreferrer">
-        <div class="ci-thumb">
-          <img loading="lazy"
-               src="https://img.youtube.com/vi/UNA45Q-5Y7o/hqdefault.jpg"
-               alt="Max MSP experiment">
-          <span class="ci-play" aria-hidden="true">▶</span>
-        </div>
-        <div class="ci-card-title">Max/MSP — 02</div>
-      </a>
-
-      <a class="ci-card"
-         href="https://www.youtube.com/watch?v=niWL0ScXeq4"
-         target="_blank" rel="noopener noreferrer">
-        <div class="ci-thumb">
-          <img loading="lazy"
-               src="https://img.youtube.com/vi/niWL0ScXeq4/hqdefault.jpg"
-               alt="Experimental project">
-          <span class="ci-play" aria-hidden="true">▶</span>
-        </div>
-        <div class="ci-card-title">Other Project — 01</div>
-      </a>
-
-      <a class="ci-card"
-         href="https://www.youtube.com/watch?v=B7ZDi5gw2b4"
-         target="_blank" rel="noopener noreferrer">
-        <div class="ci-thumb">
-          <img loading="lazy"
-               src="https://img.youtube.com/vi/B7ZDi5gw2b4/hqdefault.jpg"
-               alt="Experimental project">
-          <span class="ci-play" aria-hidden="true">▶</span>
-        </div>
-        <div class="ci-card-title">Other Project — 02</div>
-      </a>
-
-      <a class="ci-card"
-         href="https://www.youtube.com/watch?v=rlGRmKGwnJw"
-         target="_blank" rel="noopener noreferrer">
-        <div class="ci-thumb">
-          <img loading="lazy"
-               src="https://img.youtube.com/vi/rlGRmKGwnJw/hqdefault.jpg"
-               alt="Experimental project">
-          <span class="ci-play" aria-hidden="true">▶</span>
-        </div>
-        <div class="ci-card-title">Other Project — 03</div>
-      </a>
-
-    </div>
-
-  </details>
-
-  <!-- CONTACT -->
-  <footer class="ci-footer">
-    <a href="{{ '/contact/' | relative_url }}">Contact</a>
-    <a href="https://soundcloud.com/cosmictichy"
-       target="_blank" rel="noopener noreferrer">SoundCloud</a>
+  <footer class="ci-footer" aria-label="Social links and contact">
+    <a
+      href="https://nickmowery.bandcamp.com/album/all-the-ships-have-gone"
+      target="_blank"
+      rel="noopener noreferrer"
+      >Bandcamp</a
+    >
+    <a href="https://soundcloud.com/cosmictichy" target="_blank" rel="noopener noreferrer">SoundCloud</a>
+    <a
+      href="https://open.spotify.com/artist/yourartistid"
+      target="_blank"
+      rel="noopener noreferrer"
+      >Spotify</a
+    >
+    <a href="https://www.instagram.com/nick_mowery_/" target="_blank" rel="noopener noreferrer">Instagram</a>
+    <a class="ci-contact-button" href="mailto:nickmowerymusic@gmail.com">Contact Me</a>
   </footer>
-
 </div>
