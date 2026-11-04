@@ -385,7 +385,7 @@ body:has(.ci-portfolio) .post-header { display: none; }
 <main class="ci-portfolio">
 
   <header class="ci-masthead">
-    <p class="ci-overline">Live techno</p>
+    <p class="ci-overline">Live techno - Washington DC</p>
     <h1 class="ci-title"><span>Cosmic</span> <span class="ci-title-accent">Itch</span></h1>
     <div class="ci-divider" aria-hidden="true"><span>ᛉ</span></div>
 
