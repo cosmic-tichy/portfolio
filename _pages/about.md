@@ -20,4 +20,3 @@ announcements:
 latest_posts:
   enabled: false
 ---
-

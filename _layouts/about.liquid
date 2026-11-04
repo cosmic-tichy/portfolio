@@ -2,24 +2,39 @@
 layout: default
 ---
 <style>
-@keyframes multicolor {
-  0%, 20% { color: red; }
-  21%, 40% { color: blue; }
-  41%, 60% { color: green; }
-  61%, 80% { color: yellow; }
-  81%, 100% { color: purple; }
-}
-.album-announcement {
-  font-size: 1.2em;
-  font-weight: bold;
-  animation: multicolor 2s infinite;
-  text-decoration: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(5deg);
-  z-index: 10;
-}
+  @keyframes multicolor {
+    0%,
+    20% {
+      color: red;
+    }
+    21%,
+    40% {
+      color: blue;
+    }
+    41%,
+    60% {
+      color: green;
+    }
+    61%,
+    80% {
+      color: yellow;
+    }
+    81%,
+    100% {
+      color: purple;
+    }
+  }
+  .album-announcement {
+    font-size: 1.2em;
+    font-weight: bold;
+    animation: multicolor 2s infinite;
+    text-decoration: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(5deg);
+    z-index: 10;
+  }
 </style>
 <div class="post">
   <header class="post-header">
@@ -55,9 +70,7 @@ layout: default
         {% if page.profile.more_info %}
           <div class="more-info">{{ page.profile.more_info }}</div>
         {% endif %}
-        <a href="https://nickmowery.bandcamp.com/album/all-the-ships-have-gone" class="album-announcement">
-          Album available January 21st
-        </a>
+        <a href="https://nickmowery.bandcamp.com/album/all-the-ships-have-gone" class="album-announcement"> Album available January 21st </a>
       </div>
     {% endif %}
 
@@ -66,7 +79,9 @@ layout: default
     <!-- Custom social links -->
     <div class="social-links" style="margin-top: 2rem;">
       <p style="margin: 0; color: #6c757d;">
-        <a href="https://nickmowery.bandcamp.com/album/all-the-ships-have-gone" style="color: #6c757d; text-decoration: none; margin-right: 1.5rem;">Bandcamp</a>
+        <a href="https://nickmowery.bandcamp.com/album/all-the-ships-have-gone" style="color: #6c757d; text-decoration: none; margin-right: 1.5rem;"
+          >Bandcamp</a
+        >
         <a href="https://soundcloud.com/cosmictichy" style="color: #6c757d; text-decoration: none; margin-right: 1.5rem;">Soundcloud</a>
         <a href="https://open.spotify.com/artist/yourartistid" style="color: #6c757d; text-decoration: none; margin-right: 1.5rem;">Spotify</a>
         <a href="https://www.instagram.com/nick_mowery_/" style="color: #6c757d; text-decoration: none;">Instagram</a>
@@ -74,13 +89,17 @@ layout: default
     </div>
 
     <!-- Contact Me button -->
-   
 
     {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
       {% include newsletter.liquid center=true %}
     {% endif %}
   </article>
-   <div style="margin-top: 1rem;">
-      <a href="mailto:nickmowerymusic@gmail.com" class="btn font-weight-bold" style="background-image: url('{{ '/000094850011.jpg' | relative_url }}'); background-size: cover; background-position: center; color: white; border: none; padding: 0.5rem 1rem;">Contact Me</a>
-    </div>
+  <div style="margin-top: 1rem;">
+    <a
+      href="mailto:nickmowerymusic@gmail.com"
+      class="btn font-weight-bold"
+      style="background-image: url('{{ '/000094850011.jpg' | relative_url }}'); background-size: cover; background-position: center; color: white; border: none; padding: 0.5rem 1rem;"
+      >Contact Me</a
+    >
+  </div>
 </div>

@@ -1,4 +1,3 @@
-
 ---
 layout: page
 title: Cosmic Itch
@@ -182,6 +181,7 @@ nav_order: 3
     <div class="ci-video-title">
       Death Machine — Live Performance
     </div>
+
   </section>
 
   <!-- SELECTED PERFORMANCES -->
@@ -217,6 +217,7 @@ nav_order: 3
       </a>
 
     </div>
+
   </section>
 
   <!-- MORE PROJECTS -->
@@ -286,6 +287,7 @@ nav_order: 3
       </a>
 
     </div>
+
   </details>
 
   <!-- CONTACT -->
