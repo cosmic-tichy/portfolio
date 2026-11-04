@@ -3,18 +3,18 @@ const ninja = document.querySelector('ninja-keys');
 
 // add the home and posts menu items
 ninja.data = [{
-    id: "nav-about",
-    title: "about",
+    id: "nav-cosmic-itch",
+    title: "Cosmic Itch",
     section: "Navigation",
     handler: () => {
       window.location.href = "/portfolio/";
     },
-  },{id: "nav-cosmic-itch",
-          title: "Cosmic Itch",
-          description: "Live techno, custom instruments, and audio-visual experiments.",
+  },{id: "nav-about",
+          title: "About",
+          description: "",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/portfolio/cosmicitch/";
+            window.location.href = "/portfolio/about/";
           },
         },{id: "post-a-post-with-plotly-js",
         
