@@ -9,7 +9,14 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/portfolio/";
     },
-  },{id: "post-a-post-with-plotly-js",
+  },{id: "nav-cosmic-itch",
+          title: "Cosmic Itch",
+          description: "Live techno, custom instruments, and audio-visual experiments.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/portfolio/cosmicitch/";
+          },
+        },{id: "post-a-post-with-plotly-js",
         
           title: "a post with plotly.js",
         
