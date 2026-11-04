@@ -405,7 +405,9 @@ body:has(.ci-portfolio) .post-header { display: none; }
           Lately, he's gravitated toward a more punishing aesthetic, with
           distortion and formant filters conjuring scenes of primordial steel, vast
           emptiness and ancient curses. Along with his various drum machines and synths, he builds his own instruments in
-          Max for Live, designed for manipulation on stage.
+          Max for Live, designed for manipulation on stage. 
+          He's interested in how techno can alienate listeners while simultaneously bringing them together in dance. 
+          He wants to tell stories and build worlds with sound.
         </p>
         <p class="ci-manifesto">
           Worlds that suggest horror but demand dance.
