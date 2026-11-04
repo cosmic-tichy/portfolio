@@ -7,7 +7,7 @@ nav: false
 ---
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
 
 /* Cosmic Itch — clean occult editorial */
 body:has(.ci-portfolio) {
@@ -85,8 +85,8 @@ body:has(.ci-portfolio) .post-header { display: none; }
 .ci-title {
   margin: 0 !important;
   color: var(--ci-paper) !important;
-  font: 700 clamp(3.35rem, 8.2vw, 6.65rem)/.96 'Chakra Petch', sans-serif;
-  letter-spacing: -.045em;
+  font: 700 clamp(3.35rem, 8.2vw, 6.65rem)/.96 'Saira Semi Condensed', sans-serif;
+  letter-spacing: -.025em;
   text-transform: uppercase;
 }
 .ci-title-accent { color: var(--ci-red); }
@@ -126,7 +126,7 @@ body:has(.ci-portfolio) .post-header { display: none; }
 .ci-section-title {
   margin: 0 !important;
   color: var(--ci-paper) !important;
-  font: 600 clamp(1.65rem, 3.2vw, 2.35rem)/1.18 'Chakra Petch', sans-serif;
+  font: 600 clamp(1.65rem, 3.2vw, 2.35rem)/1.18 'Saira Semi Condensed', sans-serif;
   letter-spacing: -.028em;
 }
 .ci-feature-year {
@@ -285,7 +285,7 @@ body:has(.ci-portfolio) .post-header { display: none; }
   cursor: pointer;
   list-style: none;
   color: var(--ci-paper);
-  font: 600 clamp(1.35rem, 2.5vw, 1.8rem)/1.2 'Chakra Petch', sans-serif;
+  font: 600 clamp(1.35rem, 2.5vw, 1.8rem)/1.2 'Saira Semi Condensed', sans-serif;
 }
 .ci-booking summary::-webkit-details-marker { display: none; }
 .ci-booking summary::after {
