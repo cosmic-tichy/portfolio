@@ -7,139 +7,159 @@ nav: false
 ---
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-/* Cosmic Itch — clean occult editorial */
+/* Minimal white editorial theme; scoped to this page. */
 body:has(.ci-portfolio) {
-  --global-bg-color: #0e0b09;
-  --global-text-color: #e7dbc8;
-  --global-theme-color: #d76c61;
-  background: #0e0b09;
-  color: #e7dbc8;
+  --global-bg-color: #fff;
+  --global-text-color: #111;
+  --global-theme-color: #111;
+  background: #fff !important;
+  color: #111 !important;
+  color-scheme: light;
 }
 body:has(.ci-portfolio) .post-header { display: none; }
 
 .ci-portfolio {
-  --ci-bg: #0e0b09;
-  --ci-paper: #e7dbc8;
-  --ci-body: #c9bba8;
-  --ci-muted: #a99b8a;
-  --ci-red: #d76c61;
-  --ci-line: #44342e;
-  --ci-feature: #181210;
-
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(1070px, calc(100vw - 2.5rem));
-  margin: 0;
-  padding: clamp(2.5rem, 5vw, 4.5rem) 0 5rem;
-  box-sizing: border-box;
-  background: var(--ci-bg);
-  color: var(--ci-paper);
-  font: 400 18px/1.7 'DM Sans', sans-serif;
+  width: min(1040px, calc(100vw - 2rem));
+  margin: 0 auto;
+  padding: 2.5rem 0 6rem;
+  color: #111;
+  font: 400 15px/1.65 "Inter", "Helvetica Neue", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
-.ci-portfolio * { box-sizing: border-box; }
+.ci-portfolio *, .ci-portfolio *::before, .ci-portfolio *::after {
+  box-sizing: border-box;
+}
 .ci-portfolio h1,
 .ci-portfolio h2,
 .ci-portfolio p,
 .ci-portfolio figure { margin-top: 0; }
-.ci-portfolio a { color: var(--ci-paper); }
-.ci-portfolio a:focus-visible {
-  outline: 2px solid var(--ci-red);
-  outline-offset: 4px;
+.ci-portfolio a { color: #111; }
+.ci-portfolio a:focus-visible,
+.ci-booking summary:focus-visible {
+  outline: 2px solid #111;
+  outline-offset: 3px;
 }
 
-/* One repeating ornament, never a decorative frame. */
-.ci-divider {
-  display: flex;
-  align-items: center;
-  gap: 1.1rem;
-  margin: 1.6rem 0 2.5rem;
-  color: var(--ci-red);
+/* Section rhythm */
+.ci-section { margin-top: 5rem; }
+.ci-section-head {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  gap: 1rem;
+  align-items: baseline;
+  margin-bottom: 1.1rem;
 }
-.ci-divider::before,
-.ci-divider::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: var(--ci-line);
-}
-.ci-divider span {
-  font: 400 1.15rem/1 Georgia, serif;
-  flex: none;
-}
-
-/* Masthead & bio */
-.ci-masthead { margin-bottom: clamp(4rem, 7vw, 6rem); }
-.ci-overline {
-  margin: 0 0 .8rem;
-  color: var(--ci-muted);
+.ci-section-number {
+  color: #8b8b8b;
   font-size: .72rem;
-  font-weight: 500;
-  line-height: 1.5;
+  font-weight: 600;
+  letter-spacing: .12em;
+}
+.ci-section-title {
+  margin: 0 !important;
+  color: #111 !important;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: .01em;
+}
+
+/* Masthead */
+.ci-masthead { margin-bottom: 3rem; }
+.ci-overline {
+  margin: 0 0 .95rem;
+  color: #777;
+  font-size: .7rem;
+  font-weight: 600;
   letter-spacing: .14em;
   text-transform: uppercase;
 }
+
+/* The short inscription now belongs to the title, not its own banner. */
+.ci-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(1.25rem, 4vw, 3.5rem);
+  margin: 0 0 2rem;
+}
 .ci-title {
+  flex: 0 1 auto;
   margin: 0 !important;
-  color: var(--ci-paper) !important;
-  font: 700 clamp(3.35rem, 8.2vw, 6.65rem)/.96 'Saira Semi Condensed', sans-serif;
-  letter-spacing: -.025em;
-  text-transform: uppercase;
+  color: #111 !important;
+  font-size: clamp(2.9rem, 6.6vw, 5.6rem);
+  font-weight: 500;
+  line-height: .98;
+  letter-spacing: -.055em;
+  text-transform: lowercase;
+  white-space: nowrap;
 }
-.ci-title-accent { color: var(--ci-red); }
-.ci-intro {
-  display: flow-root;
-  max-width: 910px;
+.ci-title-sigil {
+  display: block;
+  flex: 0 1 360px;
+  width: min(35%, 360px);
+  height: auto;
+  object-fit: contain;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
 }
+
+.ci-intro { display: flow-root; margin-top: 1.5rem; max-width: 920px; }
 .ci-portrait {
   float: left;
   display: block;
-  width: clamp(142px, 20vw, 205px);
-  aspect-ratio: 1/1;
-  height: auto;
+  width: clamp(138px, 18vw, 190px);
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: center 76%;
-  margin: .3rem 1.75rem 1rem 0;
-  border: 6px solid #534037;
-  filter: saturate(.78) contrast(1.04);
+  margin: .2rem 1.4rem .8rem 0;
+  border: 1px solid #d9d9d9;
 }
 .ci-bio p {
-  margin: 0 0 1rem;
-  max-width: 67ch;
-  color: #e0d5c6;
-  font-size: 1.03rem;
-  font-weight: 400;
-  line-height: 1.73;
+  max-width: 68ch;
+  margin: 0 0 .95rem;
+  color: #1c1c1c;
+  font-size: .98rem;
+  line-height: 1.72;
 }
 .ci-bio .ci-manifesto {
-  margin-top: 1.5rem;
-  color: var(--ci-paper);
-  font: 500 clamp(1.08rem, 1.9vw, 1.28rem)/1.55 'DM Sans', sans-serif;
-  letter-spacing: -.01em;
+  margin-top: 1.25rem;
+  color: #111;
+  font-weight: 500;
 }
 
-/* Sections */
-.ci-section { margin-bottom: clamp(4.25rem, 7vw, 6rem); }
-.ci-section-title {
-  margin: 0 !important;
-  color: var(--ci-paper) !important;
-  font: 600 clamp(1.65rem, 3.2vw, 2.35rem)/1.18 'Saira Semi Condensed', sans-serif;
-  letter-spacing: -.028em;
+/* The long inscription rests directly on the page, with no frame or rules. */
+.ci-sigil-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem auto 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
 }
-.ci-feature-year {
-  color: var(--ci-body);
-  font-size: .72em;
-  white-space: nowrap;
+.ci-sigil-banner img {
+  display: block;
+  width: min(100%, 850px);
+  height: auto;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
 }
+
+/* Performance video */
 .ci-video-frame {
   position: relative;
-  aspect-ratio: 16 / 9;
   width: 100%;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
-  background: #080606;
+  background: #f3f3f3;
+  border: 1px solid #e2e2e2;
 }
 .ci-video-frame iframe {
   position: absolute;
@@ -149,83 +169,72 @@ body:has(.ci-portfolio) .post-header { display: none; }
   height: 100%;
   border: 0;
 }
-
-/* Featured: scale and whitespace make it the focus, not ornament. */
-.ci-featured {
-  padding: clamp(1rem, 3vw, 2.25rem);
-  background: var(--ci-feature);
-  border-top: 2px solid #965047;
-}
-.ci-featured-heading { margin-bottom: 1.35rem; }
-.ci-featured .ci-video-frame { border: 1px solid #3c2d28; }
+.ci-featured { margin-top: .4rem; }
 .ci-feature-footer {
   display: flex;
   justify-content: flex-end;
-  margin-top: 1.15rem;
+  margin-top: .8rem;
 }
-.ci-feature-footer a {
-  color: var(--ci-red) !important;
-  font-size: .9rem;
+.ci-feature-footer a,
+.ci-press-download,
+.ci-booking-list a {
+  color: #111 !important;
   text-decoration: none;
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid #bcbcbc;
 }
-.ci-feature-footer a:hover { border-bottom-color: var(--ci-red); }
+.ci-feature-footer a:hover,
+.ci-press-download:hover,
+.ci-booking-list a:hover { border-bottom-color: #111; }
 
-/* Supporting performances get no titles or card decoration. */
 .ci-video-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.35rem;
+  gap: 1.2rem;
 }
-.ci-video-grid .ci-video-frame { border: 1px solid var(--ci-line); }
-.ci-video-grid .ci-video-frame:hover { border-color: #856055; }
 
-/* Posters: same visual rhythm, all artwork visible, no cropping. */
-.ci-poster-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1.15rem;
-}
-.ci-poster {
-  display: block;
-  min-width: 0;
+/* Audio index */
+.ci-audio-list { display: grid; border-top: 1px solid #e6e6e6; }
+.ci-audio-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+  padding: .95rem 0;
+  border-bottom: 1px solid #e6e6e6;
+  color: #111 !important;
   text-decoration: none !important;
 }
-.ci-poster img {
+.ci-audio-link:hover { color: #000 !important; }
+.ci-audio-name { display: block; font-weight: 500; }
+.ci-audio-platform {
   display: block;
-  width: 100%;
-  aspect-ratio: 3 / 4;
-  object-fit: contain;
-  background: #17110e;
-  border: 1px solid var(--ci-line);
-  transition: border-color .2s ease;
+  margin-top: .15rem;
+  color: #777;
+  font-size: .84rem;
 }
-.ci-poster:hover img { border-color: #856055; }
+.ci-audio-arrow { flex: none; color: #777; font-size: 1rem; }
 
-
-/* Press photographs: unadorned editorial proofs with direct downloads. */
+/* Press photos */
 .ci-press-intro {
   max-width: 65ch;
-  margin: 0 0 1.5rem;
-  color: var(--ci-body);
-  font-size: .94rem;
+  margin: 0 0 1.4rem 72px;
+  color: #666;
+  font-size: .92rem;
 }
 .ci-press-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.35rem;
+  gap: 1.2rem;
 }
 .ci-press-item { min-width: 0; margin: 0; }
 .ci-press-preview {
-  display: grid;
-  place-items: center;
+  display: block;
   width: 100%;
   aspect-ratio: 4 / 5;
-  background: #17110e;
-  border: 1px solid var(--ci-line);
   overflow: hidden;
+  border: 1px solid #e2e2e2;
+  background: #f7f7f7;
 }
-.ci-press-preview:hover { border-color: #856055; }
 .ci-press-preview img {
   display: block;
   width: 100%;
@@ -234,94 +243,61 @@ body:has(.ci-portfolio) .post-header { display: none; }
 }
 .ci-press-item figcaption {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: .4rem 1rem;
-  padding-top: .65rem;
-  color: var(--ci-muted);
+  justify-content: flex-end;
+  padding-top: .55rem;
+  color: #777;
   font-size: .8rem;
 }
-.ci-press-download {
-  color: var(--ci-red) !important;
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-}
-.ci-press-download:hover { border-bottom-color: currentColor; }
 
-/* Audio and booking: compact secondary information. */
-.ci-audio-link {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-  padding: 1.2rem 1.35rem;
-  border: 1px solid var(--ci-line);
-  background: var(--ci-feature);
-  color: var(--ci-paper) !important;
-  text-decoration: none !important;
+/* Posters */
+.ci-poster-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
 }
-.ci-audio-link:hover { border-color: #856055; }
-.ci-audio-name { display: block; font-weight: 600; }
-.ci-audio-platform {
+.ci-poster { display: block; text-decoration: none !important; }
+.ci-poster img {
   display: block;
-  color: var(--ci-muted);
-  font-size: .8rem;
-  margin-top: .15rem;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
+  background: #f7f7f7;
+  border: 1px solid #e2e2e2;
 }
-.ci-audio-arrow { flex: none; color: var(--ci-red); font-size: 1.35rem; }
 
+/* Booking disclosure */
 .ci-booking {
-  margin-bottom: clamp(4.25rem, 7vw, 6rem);
-  border-top: 1px solid var(--ci-line);
-  border-bottom: 1px solid var(--ci-line);
+  margin-top: 4rem;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
 }
 .ci-booking summary {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1.5rem;
-  padding: 1.25rem .2rem;
+  padding: 1rem .1rem;
   cursor: pointer;
   list-style: none;
-  color: var(--ci-paper);
-  font: 600 clamp(1.35rem, 2.5vw, 1.8rem)/1.2 'Saira Semi Condensed', sans-serif;
+  color: #111;
+  font-size: 1rem;
+  font-weight: 600;
 }
 .ci-booking summary::-webkit-details-marker { display: none; }
-.ci-booking summary::after {
-  content: '+';
-  color: var(--ci-red);
-  font: 400 1.7rem/1 'DM Sans', sans-serif;
-}
+.ci-booking summary::after { content: '+'; color: #666; font-size: 1.25rem; font-weight: 400; }
 .ci-booking[open] summary::after { content: '−'; }
-.ci-booking summary:focus-visible {
-  outline: 2px solid var(--ci-red);
-  outline-offset: 4px;
-}
-.ci-booking-content {
-  max-width: 790px;
-  padding: 0 .2rem 1.8rem;
-  color: var(--ci-body);
-}
-.ci-booking-content p { margin: 0 0 1.3rem; }
-.ci-booking-list {
-  display: grid;
-  gap: 0;
-  margin: 0;
-}
+.ci-booking-content { max-width: 820px; padding: 0 .1rem 1.4rem; color: #333; }
+.ci-booking-content p { margin: 0 0 1.2rem; }
+.ci-booking-list { display: grid; margin: 0; }
 .ci-booking-list > div {
   display: grid;
-  grid-template-columns: minmax(130px, 180px) minmax(0, 1fr);
+  grid-template-columns: minmax(150px, 190px) minmax(0, 1fr);
   gap: .5rem 1rem;
-  padding: .8rem 0;
-  border-top: 1px solid var(--ci-line);
+  padding: .7rem 0;
+  border-top: 1px solid #ededed;
 }
-.ci-booking-list dt {
-  color: var(--ci-muted);
-  font-size: .82rem;
-}
+.ci-booking-list dt { color: #666; font-size: .84rem; }
 .ci-booking-list dd { margin: 0; }
-.ci-booking-list a { color: var(--ci-red) !important; }
 
 /* Contact */
 .ci-footer {
@@ -329,65 +305,68 @@ body:has(.ci-portfolio) .post-header { display: none; }
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
-  gap: 2.5rem;
-  padding-top: 2.25rem;
-  border-top: 1px solid var(--ci-line);
+  gap: 2rem;
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e6e6e6;
 }
 .ci-footer-label {
-  margin-bottom: 1rem;
-  color: var(--ci-muted);
-  font-size: .75rem;
+  margin: 0 0 .8rem;
+  color: #777;
+  font-size: .72rem;
+  font-weight: 600;
   letter-spacing: .12em;
   text-transform: uppercase;
 }
-.ci-socials { display: flex; flex-wrap: wrap; gap: .8rem 1.65rem; }
-.ci-socials a { color: var(--ci-body) !important; text-decoration: none; }
-.ci-socials a:hover { color: var(--ci-paper) !important; text-decoration: underline; text-underline-offset: 4px; }
-.ci-contact { display: flex; flex-direction: column; align-items: flex-start; gap: .65rem; }
+.ci-socials { display: flex; flex-wrap: wrap; gap: .7rem 1.4rem; }
+.ci-socials a { color: #444 !important; text-decoration: none; }
+.ci-socials a:hover { color: #111 !important; text-decoration: underline; text-underline-offset: 3px; }
+.ci-contact { display: flex; flex-direction: column; align-items: flex-start; gap: .45rem; }
 .ci-contact-button {
   display: inline-block;
-  padding: .65rem 1.25rem;
-  background: #ad5048;
-  color: #fff8f0 !important;
-  font-weight: 600;
+  padding: .55rem .9rem;
+  border: 1px solid #d0d0d0;
+  background: #fff;
+  color: #111 !important;
   font-size: .92rem;
+  font-weight: 500;
   text-decoration: none !important;
 }
-.ci-contact-button:hover { background: #c35c52; }
-.ci-email { color: var(--ci-body); font-size: .9rem; user-select: text; }
+.ci-contact-button:hover { background: #f7f7f7; }
+.ci-email { color: #666; font-size: .9rem; user-select: text; }
 
+/* Responsive */
 @media (max-width: 920px) {
   .ci-video-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .ci-poster-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .ci-press-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 700px) {
+  .ci-press-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ci-section-head { grid-template-columns: 1fr; gap: .35rem; }
+  .ci-press-intro { margin-left: 0; }
 }
 @media (max-width: 640px) {
-  .ci-portfolio { width: calc(100vw - 2rem); padding-top: 2.5rem; }
-  .ci-title { font-size: clamp(3.7rem, 15vw, 5.8rem); }
-  .ci-masthead { margin-bottom: 3.5rem; }
-  .ci-portrait { width: 128px; margin-right: 1.1rem; margin-bottom: .6rem; border-width: 5px; }
-  .ci-video-grid { grid-template-columns: 1fr; gap: 1.4rem; }
-  .ci-press-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .ci-feature-year { display: block; margin-top: .1rem; }
+  .ci-portfolio { width: calc(100vw - 1.5rem); padding-top: 2rem; }
+  .ci-title-row { align-items: flex-start; flex-direction: column; gap: 1rem; }
+  .ci-title { font-size: clamp(3rem, 13vw, 4.8rem); white-space: normal; }
+  .ci-title-sigil { flex: none; width: min(72%, 340px); }
+  .ci-portrait { float: none; width: min(170px, 48vw); margin: 0 0 1rem; }
+  .ci-video-grid, .ci-press-grid, .ci-poster-grid { grid-template-columns: 1fr; }
+  .ci-booking-list > div { grid-template-columns: 1fr; gap: .25rem; }
   .ci-footer { flex-direction: column; }
-}
-@media (max-width: 360px) {
-  .ci-portrait { width: 105px; }
-  .ci-poster-grid { gap: .7rem; }
-  .ci-press-grid { grid-template-columns: 1fr; }
-  .ci-booking-list > div { grid-template-columns: 1fr; gap: .2rem; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .ci-poster img { transition: none; }
 }
 </style>
 
 <main class="ci-portfolio">
 
   <header class="ci-masthead">
-    <p class="ci-overline">Live techno - Washington DC</p>
-    <h1 class="ci-title"><span>Cosmic</span> <span class="ci-title-accent">Itch</span></h1>
-    <div class="ci-divider" aria-hidden="true"><span>ᛉ</span></div>
+    <p class="ci-overline">Live techno — Washington DC</p>
+
+    <!-- The short sigil and the all-lowercase name share the masthead. -->
+    <div class="ci-title-row">
+      <h1 class="ci-title">cosmic itch</h1>
+     
+    </div>
 
     <div class="ci-intro">
       <img class="ci-portrait"
@@ -396,30 +375,33 @@ body:has(.ci-portfolio) .post-header { display: none; }
            loading="eager">
 
       <div class="ci-bio">
-        <p>
-          Cosmic Itch spends months developing a sonic world for each set,
-          usually as an excuse to buy too many books and
-          disappear into some arcane subject.
-        </p>
-        <p>
-          Lately, he's gravitated toward a more punishing aesthetic, with
-          distortion and formant filters conjuring scenes of primordial steel, vast
-          emptiness and ancient curses. Along with his various drum machines and synths, he builds his own instruments in
-          Max for Live, designed for manipulation on stage. 
-          He's interested in how techno can alienate listeners while simultaneously bringing them together in dance. 
-          He wants to tell stories and build worlds with sound.
-        </p>
-        <p class="ci-manifesto">
-          Worlds that suggest horror but demand dance.
-        </p>
-      </div>
+       <p>
+            Drawn by the darkness of arcane and mysterious subjects, Cosmic Itch knows the power of symbols. He uses techno as ritual, to stir up energies alien to most. He uses it to remind himself of the realm of possibility and how most restrictions are self imposed.
+            
+          </p>
+          <p>
+            Lately, he's gravitated toward a more punishing aesthetic, with
+            distortion and formant filters conjuring scenes of primordial steel, vast emptiness and ancient curses. Along with his various drum machines and synths, he builds his own instruments in
+            Max for Live, designed for manipulation on stage.
+            He's interested in how techno can alienate listeners while simultaneously bringing them together in dance.
+            He wants to tell stories and build worlds with sound.
+          </p>
+          <p class="ci-manifesto">Worlds that suggest horror but demand dance.</p>
+        </div>
+    </div>
+
+    <!-- Longer sigil: a borderless inscription between bio and footage. -->
+    <div class="ci-sigil-banner" aria-hidden="true">
+      <img src="{{ '/assets/img/sigil-banner-2.png' | relative_url }}"
+           alt="" loading="lazy">
     </div>
   </header>
 
   <section class="ci-section ci-featured" aria-labelledby="ci-feature-title">
-    <div class="ci-featured-heading">
+    <div class="ci-section-head">
+      <div class="ci-section-number">01</div>
       <h2 id="ci-feature-title" class="ci-section-title">
-        Featured Performance <span class="ci-feature-year">(The Curse 2026)</span>
+        Featured Performance (The Curse 2026)
       </h2>
     </div>
     <div class="ci-video-frame">
@@ -438,7 +420,10 @@ body:has(.ci-portfolio) .post-header { display: none; }
   </section>
 
   <section class="ci-section ci-other" aria-labelledby="ci-performances-title">
-    <div class="ci-divider" aria-hidden="true"><span>ᛉ</span></div>
+    <div class="ci-section-head">
+      <div class="ci-section-number">02</div>
+      <h2 id="ci-performances-title" class="ci-section-title">Other Performances</h2>
+    </div>
     <div class="ci-video-grid">
       <div class="ci-video-frame">
         <iframe src="https://www.youtube-nocookie.com/embed/8wlKVlbAjvw"
@@ -461,46 +446,50 @@ body:has(.ci-portfolio) .post-header { display: none; }
     </div>
   </section>
 
-  <!-- LISTENING LINK -->
   <section class="ci-section ci-audio" aria-labelledby="ci-audio-title">
-    <h2 id="ci-audio-title" class="ci-section-title">Listen</h2>
-    <div class="ci-divider" aria-hidden="true"><span>ᛉ</span></div>
-    <a class="ci-audio-link"
-       href="https://on.soundcloud.com/Xz6CFB2pktYPDJ4P9x"
-       target="_blank" rel="noopener noreferrer">
-      <span>
-        <span class="ci-audio-name">The Curse on Soundcloud</span>
-        <span class="ci-audio-platform">Audio recording</span>
-      </span>
-      <span class="ci-audio-arrow" aria-hidden="true">↗</span>
-    </a>
-    <a class="ci-audio-link"
-       href=" https://soundcloud.com/cosmictichy/ye-olde-rave-the-sin-den?si=fe4108919b99412cabb343d185029342&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
-       target="_blank" rel="noopener noreferrer">
-      <span>
-        <span class="ci-audio-name">Ye Olde Rave on Soundcloud</span>
-        <span class="ci-audio-platform">Audio recording</span>
-      </span>
-      <span class="ci-audio-arrow" aria-hidden="true">↗</span>
-    </a>
-<a class="ci-audio-link"
-       href=" https://soundcloud.com/cosmictichy/the-ritual?si=d907e2342b0443b5ad616ece1f8aab5a&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
-       target="_blank" rel="noopener noreferrer">
-      <span>
-        <span class="ci-audio-name">The Ritual Demo on Soundcloud</span>
-        <span class="ci-audio-platform">Audio recording</span>
-      </span>
-      <span class="ci-audio-arrow" aria-hidden="true">↗</span>
-    </a>
-    
+    <div class="ci-section-head">
+      <div class="ci-section-number">03</div>
+      <h2 id="ci-audio-title" class="ci-section-title">Listen</h2>
+    </div>
+    <div class="ci-audio-list">
+      <a class="ci-audio-link"
+         href="https://on.soundcloud.com/Xz6CFB2pktYPDJ4P9x"
+         target="_blank" rel="noopener noreferrer">
+        <span>
+          <span class="ci-audio-name">The Curse on SoundCloud</span>
+          <span class="ci-audio-platform">Audio recording</span>
+        </span>
+        <span class="ci-audio-arrow" aria-hidden="true">↗</span>
+      </a>
+      <a class="ci-audio-link"
+         href="https://soundcloud.com/cosmictichy/ye-olde-rave-the-sin-den?si=fe4108919b99412cabb343d185029342&amp;utm_source=clipboard&amp;utm_medium=text&amp;utm_campaign=social_sharing"
+         target="_blank" rel="noopener noreferrer">
+        <span>
+          <span class="ci-audio-name">Ye Olde Rave on SoundCloud</span>
+          <span class="ci-audio-platform">Audio recording</span>
+        </span>
+        <span class="ci-audio-arrow" aria-hidden="true">↗</span>
+      </a>
+      <a class="ci-audio-link"
+         href="https://soundcloud.com/cosmictichy/the-ritual?si=d907e2342b0443b5ad616ece1f8aab5a&amp;utm_source=clipboard&amp;utm_medium=text&amp;utm_campaign=social_sharing"
+         target="_blank" rel="noopener noreferrer">
+        <span>
+          <span class="ci-audio-name">The Ritual Demo on SoundCloud</span>
+          <span class="ci-audio-platform">Audio recording</span>
+        </span>
+        <span class="ci-audio-arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
   </section>
 
-  <!-- PRESS PHOTOS: File paths point to images already in assets/img/. -->
   <section class="ci-section ci-press" aria-labelledby="ci-press-title">
-    <h2 id="ci-press-title" class="ci-section-title">Press Photos</h2>
-    <div class="ci-divider" aria-hidden="true"><span>ᛉ</span></div>
-    <p class="ci-press-intro">Photos for event listings and promotional artwork. Select any image to view it at full size, or download the original file.</p>
-
+    <div class="ci-section-head">
+      <div class="ci-section-number">04</div>
+      <h2 id="ci-press-title" class="ci-section-title">Press Photos</h2>
+    </div>
+    <p class="ci-press-intro">
+      Photos for event listings and promotional artwork. Select any image to view it at full size, or download the original file.
+    </p>
     <div class="ci-press-grid">
       <figure class="ci-press-item">
         <a class="ci-press-preview"
@@ -515,7 +504,6 @@ body:has(.ci-portfolio) .post-header { display: none; }
              download="Cosmic-Itch-Press-01.jpg">Download ↓</a>
         </figcaption>
       </figure>
-
       <figure class="ci-press-item">
         <a class="ci-press-preview"
            href="{{ '/assets/img/IMG_20251110_104503.jpg' | relative_url }}"
@@ -529,7 +517,6 @@ body:has(.ci-portfolio) .post-header { display: none; }
              download="Cosmic-Itch-Press-02.jpg">Download ↓</a>
         </figcaption>
       </figure>
-
       <figure class="ci-press-item">
         <a class="ci-press-preview"
            href="{{ '/assets/img/pressPhoto1.jpg' | relative_url }}"
@@ -547,8 +534,10 @@ body:has(.ci-portfolio) .post-header { display: none; }
   </section>
 
   <section class="ci-section ci-posters" aria-labelledby="ci-posters-title">
-    <h2 id="ci-posters-title" class="ci-section-title">Performance Posters</h2>
-    <div class="ci-divider" aria-hidden="true"><span>ᛉ</span></div>
+    <div class="ci-section-head">
+      <div class="ci-section-number">05</div>
+      <h2 id="ci-posters-title" class="ci-section-title">Performance Posters</h2>
+    </div>
     <div class="ci-poster-grid">
       <a class="ci-poster" href="{{ '/assets/img/TheRitual_flyer.png' | relative_url }}"
          target="_blank" rel="noopener noreferrer" aria-label="View The Ritual poster">
@@ -573,7 +562,6 @@ body:has(.ci-portfolio) .post-header { display: none; }
     </div>
   </section>
 
-  <!-- Native HTML disclosure. No JavaScript or additional page required. -->
   <details class="ci-booking">
     <summary>Booking Information</summary>
     <div class="ci-booking-content">
@@ -596,8 +584,6 @@ body:has(.ci-portfolio) .post-header { display: none; }
           <dd><a href="mailto:nickmowerymusic@gmail.com">nickmowerymusic@gmail.com</a></dd>
         </div>
       </dl>
-      <!-- Optional: Add your confirmed home city, available set lengths,
-           and actual technical requirements here. -->
     </div>
   </details>
 
