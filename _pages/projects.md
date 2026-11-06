@@ -68,9 +68,9 @@ body:has(.ci-portfolio) .post-header { display: none; }
 }
 
 /* Masthead */
-.ci-masthead { margin-bottom: 3rem; }
+.ci-masthead { margin-bottom: 2.5rem; }
 .ci-overline {
-  margin: 0 0 .95rem;
+  margin: 0 0 .65rem;
   color: #777;
   font-size: .7rem;
   font-weight: 600;
@@ -82,12 +82,12 @@ body:has(.ci-portfolio) .post-header { display: none; }
 .ci-title-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: clamp(1.25rem, 4vw, 3.5rem);
-  margin: 0 0 2rem;
+  justify-content: flex-start;
+  gap: clamp(1rem, 3vw, 2.5rem);
+  margin: 0 0 1.1rem;
 }
 .ci-title {
-  flex: 0 1 auto;
+  flex: 0 0 auto;
   margin: 0 !important;
   color: #111 !important;
   font-size: clamp(2.9rem, 6.6vw, 5.6rem);
@@ -99,8 +99,9 @@ body:has(.ci-portfolio) .post-header { display: none; }
 }
 .ci-title-sigil {
   display: block;
-  flex: 0 1 360px;
-  width: min(35%, 360px);
+  flex: 0 1 300px;
+  width: min(32%, 300px);
+  max-width: 300px;
   height: auto;
   object-fit: contain;
   border: 0;
@@ -108,7 +109,7 @@ body:has(.ci-portfolio) .post-header { display: none; }
   box-shadow: none;
 }
 
-.ci-intro { display: flow-root; margin-top: 1.5rem; max-width: 920px; }
+.ci-intro { display: flow-root; margin-top: 0; max-width: 960px; }
 .ci-portrait {
   float: left;
   display: block;
@@ -116,18 +117,18 @@ body:has(.ci-portfolio) .post-header { display: none; }
   aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: center 76%;
-  margin: .2rem 1.4rem .8rem 0;
-  border: 1px solid #d9d9d9;
+  margin: .1rem 1.2rem .65rem 0;
+  border: 4px solid #b8b8b8;
 }
 .ci-bio p {
-  max-width: 68ch;
-  margin: 0 0 .95rem;
+  max-width: 74ch;
+  margin: 0 0 .7rem;
   color: #1c1c1c;
   font-size: .98rem;
-  line-height: 1.72;
+  line-height: 1.62;
 }
 .ci-bio .ci-manifesto {
-  margin-top: 1.25rem;
+  margin-top: .8rem;
   color: #111;
   font-weight: 500;
 }
@@ -137,7 +138,7 @@ body:has(.ci-portfolio) .post-header { display: none; }
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 3rem auto 0;
+  margin: 2rem auto 0;
   padding: 0;
   border: 0;
   background: transparent;
@@ -347,9 +348,9 @@ body:has(.ci-portfolio) .post-header { display: none; }
 }
 @media (max-width: 640px) {
   .ci-portfolio { width: calc(100vw - 1.5rem); padding-top: 2rem; }
-  .ci-title-row { align-items: flex-start; flex-direction: column; gap: 1rem; }
-  .ci-title { font-size: clamp(3rem, 13vw, 4.8rem); white-space: normal; }
-  .ci-title-sigil { flex: none; width: min(72%, 340px); }
+  .ci-title-row { align-items: center; flex-direction: row; gap: .75rem; }
+  .ci-title { font-size: clamp(2.1rem, 8vw, 3.4rem); white-space: nowrap; }
+  .ci-title-sigil { flex: 0 1 125px; width: clamp(60px, 22vw, 125px); }
   .ci-portrait { float: none; width: min(170px, 48vw); margin: 0 0 1rem; }
   .ci-video-grid, .ci-press-grid, .ci-poster-grid { grid-template-columns: 1fr; }
   .ci-booking-list > div { grid-template-columns: 1fr; gap: .25rem; }
@@ -365,7 +366,11 @@ body:has(.ci-portfolio) .post-header { display: none; }
     <!-- The short sigil and the all-lowercase name share the masthead. -->
     <div class="ci-title-row">
       <h1 class="ci-title">cosmic itch</h1>
-     
+      <img class="ci-title-sigil"
+           src="{{ '/assets/img/sigil-banner-1.png' | relative_url }}"
+           alt=""
+           aria-hidden="true"
+           loading="eager">
     </div>
 
     <div class="ci-intro">
@@ -376,17 +381,12 @@ body:has(.ci-portfolio) .post-header { display: none; }
 
       <div class="ci-bio">
        <p>
-            Drawn by the darkness of arcane and mysterious subjects, Cosmic Itch knows the power of symbols. He uses techno as ritual, to stir up energies alien to most. He uses it to remind himself of the realm of possibility and how most restrictions are self imposed.
+            Drawn to theatrical darkness, Cosmic Itch treats techno as arcane ritual. He asks you to abandon what you know and surrender to a world of forbidden sounds and symbols. Cosmic Itch seeks to liberate through utter alientation. To summon dance from worlds of horror.
             
           </p>
           <p>
-            Lately, he's gravitated toward a more punishing aesthetic, with
-            distortion and formant filters conjuring scenes of primordial steel, vast emptiness and ancient curses. Along with his various drum machines and synths, he builds his own instruments in
-            Max for Live, designed for manipulation on stage.
-            He's interested in how techno can alienate listeners while simultaneously bringing them together in dance.
-            He wants to tell stories and build worlds with sound.
+            Cosmic Itch builds his sets on a mixture of drum machines, synths and custom built Max for Live instruments which he modulates live. He's a producer, guitarist, band member, and songwriter. The throughline of all his projects is drama and energy.
           </p>
-          <p class="ci-manifesto">Worlds that suggest horror but demand dance.</p>
         </div>
     </div>
 
