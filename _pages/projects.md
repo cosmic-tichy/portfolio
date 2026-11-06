@@ -53,18 +53,18 @@ body:has(.ci-portfolio) .post-header { display: none; }
   margin-bottom: 1.1rem;
 }
 .ci-section-number {
-  color: #8b8b8b;
-  font-size: .72rem;
-  font-weight: 600;
-  letter-spacing: .12em;
+  color: #9a9a9a;
+  font-size: .7rem;
+  font-weight: 400;
+  letter-spacing: .1em;
 }
 .ci-section-title {
   margin: 0 !important;
-  color: #111 !important;
-  font-size: 1rem;
-  font-weight: 600;
-  line-height: 1.35;
-  letter-spacing: .01em;
+  color: #777 !important;
+  font-size: .84rem;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: .045em;
 }
 
 /* Masthead */
@@ -170,7 +170,23 @@ body:has(.ci-portfolio) .post-header { display: none; }
   height: 100%;
   border: 0;
 }
-.ci-featured { margin-top: .4rem; }
+/* Both performance sections sit within one light-grey field.
+   Only the featured player takes the full width. */
+.ci-performances-panel {
+  margin-top: 2.25rem;
+  padding: clamp(1.1rem, 3.4vw, 2.75rem);
+  background: #eeeeee;
+}
+.ci-performances-panel .ci-section { margin-top: 0; }
+.ci-performances-panel .ci-section-title { color: #666 !important; }
+.ci-featured { margin-top: 0; }
+.ci-performances-panel .ci-other {
+  margin-top: 2.75rem;
+  padding-top: 2.35rem;
+  border-top: 1px solid #d5d5d5;
+}
+.ci-performances-panel .ci-video-frame { border: 0; }
+.ci-performances-panel .ci-feature-footer a { font-size: .82rem; }
 .ci-feature-footer {
   display: flex;
   justify-content: flex-end;
@@ -193,48 +209,69 @@ body:has(.ci-portfolio) .post-header { display: none; }
   gap: 1.2rem;
 }
 
-/* Audio index */
-.ci-audio-list { display: grid; border-top: 1px solid #e6e6e6; }
+/* Audio index: the same light-gray field, styled as a restrained list. */
+.ci-audio {
+  padding: clamp(1.25rem, 3.4vw, 2.75rem);
+  background: #eeeeee;
+}
+.ci-audio .ci-section-title { color: #666 !important; }
+.ci-audio-list { display: grid; border-top: 1px solid #d5d5d5; }
 .ci-audio-link {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1.2rem;
-  padding: .95rem 0;
-  border-bottom: 1px solid #e6e6e6;
+  padding: 1rem .2rem;
+  border-bottom: 1px solid #d5d5d5;
   color: #111 !important;
   text-decoration: none !important;
 }
-.ci-audio-link:hover { color: #000 !important; }
+.ci-audio-link:last-child { border-bottom: 0; }
+.ci-audio-link:hover { background: #e5e5e5; }
 .ci-audio-name { display: block; font-weight: 500; }
 .ci-audio-platform {
   display: block;
   margin-top: .15rem;
   color: #777;
-  font-size: .84rem;
+  font-size: .8rem;
 }
 .ci-audio-arrow { flex: none; color: #777; font-size: 1rem; }
 
-/* Press photos */
+/* Press materials share the quiet gray field of the videos.
+   Photos are square editorial proofs; posters retain their portrait proportions. */
+.ci-press {
+  padding: clamp(1.25rem, 3.4vw, 2.75rem);
+  background: #eeeeee;
+}
+.ci-press .ci-section-title { color: #666 !important; }
 .ci-press-intro {
   max-width: 65ch;
-  margin: 0 0 1.4rem 72px;
+  margin: 0 0 1.6rem 72px;
   color: #666;
   font-size: .92rem;
 }
 .ci-press-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  gap: 1.4rem;
+  width: 100%;
+  margin: 0 auto;
 }
-.ci-press-item { min-width: 0; margin: 0; }
+.ci-press-item {
+  flex: 0 1 248px;
+  width: min(100%, 248px);
+  min-width: 0;
+  margin: 0;
+}
 .ci-press-preview {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
-  border: 1px solid #e2e2e2;
-  background: #f7f7f7;
+  background: #fff;
+  border: 1px solid #d4d4d4;
 }
 .ci-press-preview img {
   display: block;
@@ -244,58 +281,103 @@ body:has(.ci-portfolio) .post-header { display: none; }
 }
 .ci-press-item figcaption {
   display: flex;
-  justify-content: flex-end;
-  padding-top: .55rem;
+  justify-content: center;
+  padding-top: .65rem;
   color: #777;
   font-size: .8rem;
 }
 
-/* Posters */
-.ci-poster-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1rem;
+/* Posters: a separate, expandable gray archive with evenly spaced prints. */
+.ci-poster-archive {
+  margin-top: 3.75rem;
+  padding: clamp(1.25rem, 3.4vw, 2.75rem);
+  background: #eeeeee;
+  border: 0;
 }
-.ci-poster { display: block; text-decoration: none !important; }
+.ci-poster-archive summary {
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  gap: 1rem;
+  align-items: baseline;
+  padding: 0;
+  cursor: pointer;
+  list-style: none;
+}
+.ci-poster-archive summary::-webkit-details-marker { display: none; }
+.ci-poster-archive summary:focus-visible { outline: 2px solid #111; outline-offset: 3px; }
+.ci-poster-archive .ci-section-title { color: #666 !important; }
+.ci-poster-hint {
+  color: #999;
+  font-size: .75rem;
+  letter-spacing: .02em;
+}
+.ci-poster-hint::after { content: ' +'; }
+.ci-poster-archive[open] .ci-poster-hint::after { content: ' −'; }
+.ci-poster-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  gap: 1.25rem;
+  width: 100%;
+  margin: 1.6rem auto 0;
+  padding: 0;
+}
+.ci-poster {
+  display: block;
+  flex: 0 1 196px;
+  width: min(100%, 196px);
+  min-width: 0;
+  text-decoration: none !important;
+}
 .ci-poster img {
   display: block;
   width: 100%;
   aspect-ratio: 3 / 4;
   object-fit: contain;
-  background: #f7f7f7;
-  border: 1px solid #e2e2e2;
+  background: #fff;
+  border: 1px solid #d4d4d4;
 }
 
-/* Booking disclosure */
+/* Booking: a gray disclosure panel matching the other sections. */
 .ci-booking {
-  margin-top: 4rem;
-  border-top: 1px solid #e6e6e6;
-  border-bottom: 1px solid #e6e6e6;
+  margin-top: 3.75rem;
+  padding: clamp(1.25rem, 3.4vw, 2.75rem);
+  background: #eeeeee;
+  border: 0;
 }
 .ci-booking summary {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1.5rem;
-  padding: 1rem .1rem;
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0;
   cursor: pointer;
   list-style: none;
-  color: #111;
-  font-size: 1rem;
-  font-weight: 600;
 }
 .ci-booking summary::-webkit-details-marker { display: none; }
-.ci-booking summary::after { content: '+'; color: #666; font-size: 1.25rem; font-weight: 400; }
+.ci-booking summary::after {
+  content: '+';
+  color: #777;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1;
+}
 .ci-booking[open] summary::after { content: '−'; }
-.ci-booking-content { max-width: 820px; padding: 0 .1rem 1.4rem; color: #333; }
+.ci-booking summary:hover .ci-section-title { color: #222 !important; }
+.ci-booking-content {
+  max-width: 820px;
+  padding: 1.6rem 0 0;
+  color: #333;
+}
 .ci-booking-content p { margin: 0 0 1.2rem; }
 .ci-booking-list { display: grid; margin: 0; }
 .ci-booking-list > div {
   display: grid;
   grid-template-columns: minmax(150px, 190px) minmax(0, 1fr);
   gap: .5rem 1rem;
-  padding: .7rem 0;
-  border-top: 1px solid #ededed;
+  padding: .75rem 0;
+  border-top: 1px solid #d5d5d5;
 }
 .ci-booking-list dt { color: #666; font-size: .84rem; }
 .ci-booking-list dd { margin: 0; }
@@ -315,7 +397,7 @@ body:has(.ci-portfolio) .post-header { display: none; }
   margin: 0 0 .8rem;
   color: #777;
   font-size: .72rem;
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: .12em;
   text-transform: uppercase;
 }
@@ -339,12 +421,12 @@ body:has(.ci-portfolio) .post-header { display: none; }
 /* Responsive */
 @media (max-width: 920px) {
   .ci-video-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .ci-poster-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 700px) {
-  .ci-press-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .ci-section-head { grid-template-columns: 1fr; gap: .35rem; }
   .ci-press-intro { margin-left: 0; }
+  .ci-poster-archive summary,
+  .ci-booking summary { grid-template-columns: 32px minmax(0, 1fr) auto; gap: .65rem; }
 }
 @media (max-width: 640px) {
   .ci-portfolio { width: calc(100vw - 1.5rem); padding-top: 2rem; }
@@ -352,7 +434,15 @@ body:has(.ci-portfolio) .post-header { display: none; }
   .ci-title { font-size: clamp(2.1rem, 8vw, 3.4rem); white-space: nowrap; }
   .ci-title-sigil { flex: 0 1 125px; width: clamp(60px, 22vw, 125px); }
   .ci-portrait { float: none; width: min(170px, 48vw); margin: 0 0 1rem; }
-  .ci-video-grid, .ci-press-grid, .ci-poster-grid { grid-template-columns: 1fr; }
+  .ci-video-grid { grid-template-columns: 1fr; }
+  .ci-performances-panel,
+  .ci-audio,
+  .ci-press,
+  .ci-poster-archive,
+  .ci-booking { padding: 1.2rem; }
+  .ci-performances-panel .ci-other { margin-top: 2rem; padding-top: 1.75rem; }
+  .ci-press-item { flex-basis: min(100%, 290px); width: min(100%, 290px); }
+  .ci-poster { flex-basis: min(42%, 175px); }
   .ci-booking-list > div { grid-template-columns: 1fr; gap: .25rem; }
   .ci-footer { flex-direction: column; }
 }
@@ -390,13 +480,10 @@ body:has(.ci-portfolio) .post-header { display: none; }
         </div>
     </div>
 
-    <!-- Longer sigil: a borderless inscription between bio and footage. -->
-    <div class="ci-sigil-banner" aria-hidden="true">
-      <img src="{{ '/assets/img/sigil-banner-2.png' | relative_url }}"
-           alt="" loading="lazy">
-    </div>
+    
   </header>
 
+  <div class="ci-performances-panel" aria-label="Cosmic Itch live performances">
   <section class="ci-section ci-featured" aria-labelledby="ci-feature-title">
     <div class="ci-section-head">
       <div class="ci-section-number">01</div>
@@ -445,6 +532,7 @@ body:has(.ci-portfolio) .post-header { display: none; }
       </div>
     </div>
   </section>
+  </div>
 
   <section class="ci-section ci-audio" aria-labelledby="ci-audio-title">
     <div class="ci-section-head">
@@ -481,7 +569,11 @@ body:has(.ci-portfolio) .post-header { display: none; }
       </a>
     </div>
   </section>
-
+<!-- Longer sigil: a borderless inscription between bio and footage. -->
+    <div class="ci-sigil-banner" aria-hidden="true">
+      <img src="{{ '/assets/img/sigil-banner-2.png' | relative_url }}"
+           alt="" loading="lazy">
+    </div>
   <section class="ci-section ci-press" aria-labelledby="ci-press-title">
     <div class="ci-section-head">
       <div class="ci-section-number">04</div>
@@ -533,11 +625,12 @@ body:has(.ci-portfolio) .post-header { display: none; }
     </div>
   </section>
 
-  <section class="ci-section ci-posters" aria-labelledby="ci-posters-title">
-    <div class="ci-section-head">
-      <div class="ci-section-number">05</div>
-      <h2 id="ci-posters-title" class="ci-section-title">Performance Posters</h2>
-    </div>
+  <details class="ci-poster-archive">
+    <summary aria-label="Show or hide performance posters">
+      <span class="ci-section-number">05</span>
+      <span class="ci-section-title">Performance Posters</span>
+      <span class="ci-poster-hint">4 posters</span>
+    </summary>
     <div class="ci-poster-grid">
       <a class="ci-poster" href="{{ '/assets/img/TheRitual_flyer.png' | relative_url }}"
          target="_blank" rel="noopener noreferrer" aria-label="View The Ritual poster">
@@ -560,10 +653,13 @@ body:has(.ci-portfolio) .post-header { display: none; }
              alt="The Curse poster" loading="lazy">
       </a>
     </div>
-  </section>
+  </details>
 
   <details class="ci-booking">
-    <summary>Booking Information</summary>
+    <summary>
+      <span class="ci-section-number">06</span>
+      <span class="ci-section-title">Booking Information</span>
+    </summary>
     <div class="ci-booking-content">
       <p>Cosmic Itch performs original live techno using hardware instruments and custom Max for Live devices.</p>
       <dl class="ci-booking-list">
