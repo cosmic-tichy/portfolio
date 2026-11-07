@@ -133,26 +133,6 @@ body:has(.ci-portfolio) .post-header { display: none; }
   font-weight: 500;
 }
 
-/* The long inscription rests directly on the page, with no frame or rules. */
-.ci-sigil-banner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 2rem auto 0;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  box-shadow: none;
-}
-.ci-sigil-banner img {
-  display: block;
-  width: min(100%, 850px);
-  height: auto;
-  border: 0;
-  background: transparent;
-  box-shadow: none;
-}
-
 /* Performance video */
 .ci-video-frame {
   position: relative;
@@ -170,23 +150,103 @@ body:has(.ci-portfolio) .post-header { display: none; }
   height: 100%;
   border: 0;
 }
-/* Both performance sections sit within one light-grey field.
-   Only the featured player takes the full width. */
+/* Full-size players, with the main performance visually dominant. */
+.ci-performances-panel,
+.ci-other-panel {
+  padding: clamp(1.1rem, 3.4vw, 2.75rem);
+}
 .ci-performances-panel {
   margin-top: 2.25rem;
-  padding: clamp(1.1rem, 3.4vw, 2.75rem);
   background: #eeeeee;
 }
-.ci-performances-panel .ci-section { margin-top: 0; }
+.ci-performances-panel .ci-section,
+.ci-other-panel .ci-section { margin-top: 0; }
 .ci-performances-panel .ci-section-title { color: #666 !important; }
-.ci-featured { margin-top: 0; }
-.ci-performances-panel .ci-other {
-  margin-top: 2.75rem;
-  padding-top: 2.35rem;
-  border-top: 1px solid #d5d5d5;
-}
 .ci-performances-panel .ci-video-frame { border: 0; }
-.ci-performances-panel .ci-feature-footer a { font-size: .82rem; }
+.ci-featured { margin-top: 0; }
+
+/* The long sigil is an unframed white-space divider between performances. */
+.ci-performance-divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: clamp(2.8rem, 5.5vw, 4.6rem) auto;
+  padding: 0 1rem;
+  border: 0;
+  background: transparent;
+}
+.ci-performance-divider img {
+  display: block;
+  width: min(100%, 760px);
+  height: auto;
+  border: 0;
+  background: transparent;
+}
+
+/* The secondary player is full-size, but its light panel is less assertive. */
+.ci-other-panel {
+  margin-top: 0;
+  background: #f7f7f7;
+}
+.ci-other-panel .ci-section-title { color: #777 !important; }
+.ci-other-panel .ci-video-frame { border: 0; }
+.ci-other-panel .ci-section-head { margin-bottom: 1rem; }
+
+/* Prominent, deliberate video-switching controls ABOVE the player. */
+.ci-other-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: .85rem 1.5rem;
+  margin: 0 0 1.4rem;
+}
+.ci-other-controls-label {
+  margin: 0 !important;
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #555;
+}
+.ci-other-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+}
+.ci-other-selector button {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .6rem;
+  min-height: 49px;
+  min-width: 144px;
+  border: 1px solid #666;
+  border-radius: 0;
+  background: #fff;
+  padding: .7rem 1rem;
+  font: 600 .86rem/1.25 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  color: #171717;
+  cursor: pointer;
+  transition: background-color .15s ease, color .15s ease, border-color .15s ease;
+}
+.ci-other-selector button .ci-play-icon { font-size: .72rem; }
+.ci-other-selector button:hover {
+  color: #fff;
+  background: #303030;
+  border-color: #303030;
+}
+.ci-other-selector button[aria-pressed="true"] {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+.ci-other-selector button:focus-visible {
+  outline: 2px solid #111;
+  outline-offset: 3px;
+}
+
 .ci-feature-footer {
   display: flex;
   justify-content: flex-end;
@@ -202,12 +262,6 @@ body:has(.ci-portfolio) .post-header { display: none; }
 .ci-feature-footer a:hover,
 .ci-press-download:hover,
 .ci-booking-list a:hover { border-bottom-color: #111; }
-
-.ci-video-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.2rem;
-}
 
 /* Audio index: the same light-gray field, styled as a restrained list. */
 .ci-audio {
@@ -420,7 +474,6 @@ body:has(.ci-portfolio) .post-header { display: none; }
 
 /* Responsive */
 @media (max-width: 920px) {
-  .ci-video-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 700px) {
   .ci-section-head { grid-template-columns: 1fr; gap: .35rem; }
@@ -434,17 +487,23 @@ body:has(.ci-portfolio) .post-header { display: none; }
   .ci-title { font-size: clamp(2.1rem, 8vw, 3.4rem); white-space: nowrap; }
   .ci-title-sigil { flex: 0 1 125px; width: clamp(60px, 22vw, 125px); }
   .ci-portrait { float: none; width: min(170px, 48vw); margin: 0 0 1rem; }
-  .ci-video-grid { grid-template-columns: 1fr; }
   .ci-performances-panel,
+  .ci-other-panel,
   .ci-audio,
   .ci-press,
   .ci-poster-archive,
   .ci-booking { padding: 1.2rem; }
-  .ci-performances-panel .ci-other { margin-top: 2rem; padding-top: 1.75rem; }
   .ci-press-item { flex-basis: min(100%, 290px); width: min(100%, 290px); }
   .ci-poster { flex-basis: min(42%, 175px); }
+  .ci-other-controls { align-items: stretch; flex-direction: column; }
+  .ci-other-selector { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .4rem; }
+  .ci-other-selector button { min-width: 0; min-height: 52px; padding: .65rem .4rem; gap: .35rem; font-size: .75rem; }
+  .ci-performance-divider { margin: 3rem auto; padding: 0 .25rem; }
   .ci-booking-list > div { grid-template-columns: 1fr; gap: .25rem; }
   .ci-footer { flex-direction: column; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ci-other-selector button { transition: none; }
 }
 </style>
 
@@ -472,7 +531,7 @@ body:has(.ci-portfolio) .post-header { display: none; }
       <div class="ci-bio">
        <p>
             Drawn to theatrical darkness, Cosmic Itch treats techno as arcane ritual. He asks you to abandon what you know and surrender to a world of forbidden sounds and symbols. Cosmic Itch seeks to liberate through utter alientation. To summon dance from worlds of horror.
-            
+
           </p>
           <p>
             Cosmic Itch builds his sets on a mixture of drum machines, synths and custom built Max for Live instruments which he modulates live. He's a producer, guitarist, band member, and songwriter. The throughline of all his projects is drama and energy.
@@ -480,58 +539,77 @@ body:has(.ci-portfolio) .post-header { display: none; }
         </div>
     </div>
 
-    
   </header>
 
-  <div class="ci-performances-panel" aria-label="Cosmic Itch live performances">
-  <section class="ci-section ci-featured" aria-labelledby="ci-feature-title">
-    <div class="ci-section-head">
-      <div class="ci-section-number">01</div>
-      <h2 id="ci-feature-title" class="ci-section-title">
-        Featured Performance (The Curse 2026)
-      </h2>
-    </div>
-    <div class="ci-video-frame">
-      <iframe
-        src="https://www.youtube-nocookie.com/embed/7u5X4sU6G-4"
-        title="Cosmic Itch live at The Curse 2026"
-        loading="eager"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen></iframe>
-    </div>
-    <div class="ci-feature-footer">
-      <a href="https://www.youtube.com/watch?v=7u5X4sU6G-4"
-         target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a>
-    </div>
-  </section>
+  <!-- Primary showcase: full-size player and stronger gray field. -->
+  <div class="ci-performances-panel" aria-label="Cosmic Itch featured live performance">
+    <section class="ci-section ci-featured" aria-labelledby="ci-feature-title">
+      <div class="ci-section-head">
+        <div class="ci-section-number">01</div>
+        <h2 id="ci-feature-title" class="ci-section-title">Featured Performance (The Curse 2026)</h2>
+      </div>
+      <div class="ci-video-frame">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/7u5X4sU6G-4"
+          title="Cosmic Itch live at The Curse 2026"
+          loading="eager"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen></iframe>
+      </div>
+      <div class="ci-feature-footer">
+        <a href="https://www.youtube.com/watch?v=7u5X4sU6G-4"
+           target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a>
+      </div>
+    </section>
+  </div>
 
-  <section class="ci-section ci-other" aria-labelledby="ci-performances-title">
-    <div class="ci-section-head">
-      <div class="ci-section-number">02</div>
-      <h2 id="ci-performances-title" class="ci-section-title">Other Performances</h2>
-    </div>
-    <div class="ci-video-grid">
-      <div class="ci-video-frame">
-        <iframe src="https://www.youtube-nocookie.com/embed/8wlKVlbAjvw"
-          title="Cosmic Itch performance 2" loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <!-- A single quiet inscription separates the primary show from the archive. -->
+  <div class="ci-performance-divider" aria-hidden="true">
+    <img src="{{ '/assets/img/sigil-banner-2.png' | relative_url }}"
+         alt="" loading="lazy">
+  </div>
+
+  <!-- Secondary showcase: a full-size player with immediately visible selectors. -->
+  <div class="ci-other-panel">
+    <section class="ci-section ci-other" aria-labelledby="ci-performances-title">
+      <div class="ci-section-head">
+        <div class="ci-section-number">02</div>
+        <h2 id="ci-performances-title" class="ci-section-title">Other Performances</h2>
+      </div>
+      <div class="ci-other-controls">
+        <div class="ci-other-selector" role="group" aria-label="Choose another live performance">
+          <button type="button" data-video="8wlKVlbAjvw" data-title="Cosmic Itch performance 2"
+                  aria-controls="ci-other-player" aria-pressed="true" aria-label="Watch performance 02">
+            <span class="ci-play-icon" aria-hidden="true">▶</span><span>Performance 02</span>
+          </button>
+          <button type="button" data-video="evsFMZ7wfB0" data-title="Cosmic Itch performance 3"
+                  aria-controls="ci-other-player" aria-pressed="false" aria-label="Watch performance 03">
+            <span class="ci-play-icon" aria-hidden="true">▶</span><span>Performance 03</span>
+          </button>
+          <button type="button" data-video="oJL-5jxMEn8" data-title="Cosmic Itch performance 4"
+                  aria-controls="ci-other-player" aria-pressed="false" aria-label="Watch performance 04">
+            <span class="ci-play-icon" aria-hidden="true">▶</span><span>Performance 04</span>
+          </button>
+        </div>
       </div>
       <div class="ci-video-frame">
-        <iframe src="https://www.youtube-nocookie.com/embed/evsFMZ7wfB0"
-          title="Cosmic Itch performance 3" loading="lazy"
+        <iframe id="ci-other-player"
+          src="https://www.youtube-nocookie.com/embed/8wlKVlbAjvw"
+          data-current="8wlKVlbAjvw"
+          title="Cosmic Itch performance 2"
+          loading="lazy"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen></iframe>
       </div>
-      <div class="ci-video-frame">
-        <iframe src="https://www.youtube-nocookie.com/embed/oJL-5jxMEn8"
-          title="Cosmic Itch performance 4" loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>
-    </div>
-  </section>
+      <noscript>
+        <p>Additional recordings:
+          <a href="https://www.youtube.com/watch?v=evsFMZ7wfB0">03</a> ·
+          <a href="https://www.youtube.com/watch?v=oJL-5jxMEn8">04</a>
+        </p>
+      </noscript>
+    </section>
   </div>
 
   <section class="ci-section ci-audio" aria-labelledby="ci-audio-title">
@@ -569,11 +647,6 @@ body:has(.ci-portfolio) .post-header { display: none; }
       </a>
     </div>
   </section>
-<!-- Longer sigil: a borderless inscription between bio and footage. -->
-    <div class="ci-sigil-banner" aria-hidden="true">
-      <img src="{{ '/assets/img/sigil-banner-2.png' | relative_url }}"
-           alt="" loading="lazy">
-    </div>
   <section class="ci-section ci-press" aria-labelledby="ci-press-title">
     <div class="ci-section-head">
       <div class="ci-section-number">04</div>
@@ -702,3 +775,26 @@ body:has(.ci-portfolio) .post-header { display: none; }
   </footer>
 
 </main>
+
+<script>
+(function () {
+  const player = document.getElementById('ci-other-player');
+  const buttons = Array.from(document.querySelectorAll('.ci-other-selector button[data-video]'));
+  if (!player || !buttons.length) return;
+
+  buttons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      const id = button.dataset.video;
+      if (!/^[A-Za-z0-9_-]{11}$/.test(id)) return;
+      if (player.dataset.current !== id) {
+        player.src = 'https://www.youtube-nocookie.com/embed/' + id;
+        player.dataset.current = id;
+        player.title = button.dataset.title || 'Cosmic Itch live performance';
+      }
+      buttons.forEach(function (item) {
+        item.setAttribute('aria-pressed', String(item === button));
+      });
+    });
+  });
+}());
+</script>
